@@ -1,0 +1,50 @@
+<ion-header-bar class="bar bar-header login-content">
+</ion-header-bar>
+<ion-content>
+	<div class="controles">
+		<button class="button button-icon ion-chevron-left button-back" ui-sref="polizas"></button><span class="controles-title">Propiedad</span>
+	</div>
+	<section class="layout-info-poliza">
+		<div class="logo-aseguradora">
+			<img src="http://conexseguros.com/images/logo-global.jpg" alt="">
+		</div>
+		<div class="info-poliza">
+			<div>
+				<div class="inline-block Dtipo-poliza">
+					<h4 >{{info.tipo_poliza}}</h4>
+				</div>
+					<div ng-switch on ="info.estado" class="inline-block Destado">
+						<span class="list-text" ng-switch-when="ACTIVO" style="color:Green"> {{info.estado}}</span>
+						<span  class="list-text" ng-switch-when="INACTIVO" style="color:RED">{{info.estado}}</span>
+						<span class="list-text" ng-switch-default >{{info.estado}}</span>
+					</div>
+				<p>Fecha de inicio:{{info.fecha_inicial}}</p>
+				<p>Vence: {{info.fecha_final}} </p>	
+			</div>
+		</div>
+		<a href="tel:3202898982" ng-click="sendMail()" class="call">
+			 <img src="./img/call.png" alt="imagen telefono">
+			 <div class="call-text"><p>Llamar</p> </div>
+		</a>
+		
+	</section>
+	<section class="info-personal">
+		<div class="tipo-poliza" ng-switch on="info.tipo_poliza">
+			<p>Titular de la póliza: <span>{{info.titular}}</span></p>
+			<p>Cc: <span>{{info.cedula_nit}}</span></p>
+			<p> email: <span>{{info.e_mail_contac}}</span></p>
+			<p ng-if ="info.domicilio_contac != 'N/A'">Dirección: <span>{{info.domicilio_contac}}</span></p>
+			<p ng-if ="info.empresa != 'N/A'">Dirección: <span>{{info.empresa}}</span></p>
+			<div ng-switch-when="AUTOMOVILES">
+				Placa: <p>{{info.placas}}</p>
+				<p ng-if"info.empresa != 'N/A'">{{info.empresa}}</p>
+			</div>
+			<div ng-switch-when="MOTOCICLETA">
+				<p>Placa:  <span>{{info.placas}}</span></p>
+			</div>
+			<div ng-switch-default>
+		
+			</div>
+		</div>
+	</section>
+</ion-content>

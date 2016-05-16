@@ -1,0 +1,18 @@
+<ion-header-bar class=" bar bar-header bar-assertive">
+	<h1 class="title">Perfil</h1>
+</ion-header-bar>
+<ion-content>
+<div class="controles">
+	<button class="button button-icon ion-chevron-left button-back" ></button><span class="text-button">Mis Pólizas</span>
+</div>
+	{{perfil.titular}}
+
+	<p>Cc. {{perfil.cedula_nit}}</p>
+	<p>Tel. {{perfil.telefono_contac}}</p>
+	<p>Dir. {{perfil.domicilio_contac}}</p>
+	<p>Email {{perfil.e_mail_contac}}</p>
+	<p>Total de polizas: {{perfil.num_polizas}}</p>
+	<p>Polizas activas: {{perfil.pol_activas}}</p>
+	<p>Polizas activas: {{perfil.pol_inactivas}}</p>
+
+</ion-content>

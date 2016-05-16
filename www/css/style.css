@@ -1,0 +1,161 @@
+/* Empty. Add your own CSS if you like */
+body{
+	font-family: Roboto !important;
+	font-size: 16px;
+}
+.login-content{
+	background: rgba(0,34,118,1);
+	background: -moz-linear-gradient(top, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,34,118,1)), color-stop(40%, rgba(0,34,118,1)), color-stop(100%, rgba(1,60,149,1)));
+	background: -webkit-linear-gradient(top, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
+	background: -o-linear-gradient(top, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
+	background: -ms-linear-gradient(top, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
+	background: linear-gradient(to bottom, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002276', endColorstr='#013c95', GradientType=0 );
+}
+.img-logo{
+	width: 90%;
+	margin:0 auto;
+	max-height: 250px;
+	padding-top: 10%;
+}
+.img-logo img{
+	max-width: 100%;
+}
+.login-content form{
+	
+	width: 80%;
+	margin: 20% auto;
+	text-align: center;
+
+}
+.login-content form input[type=number]{
+	width: 90%;
+	margin:0 auto;
+	border-bottom: 1px solid #001959;
+}
+.text-white{
+	color: #fff;
+}
+.form-div-container{
+	height: 120px;
+	width: 100%;
+	background: #012b95;
+}
+.btn-login{
+	margin-top:2em;
+	height: 60px;
+	background: #d5802d;
+	border-top: 2px solid #854200;
+	width: 100%;
+	color:#854200;
+	font-family: Roboto-Regular;
+	font-size: 24px;
+	text-shadow: #ffc082 1px 1px 2px;
+	box-sizing: border-box;
+}
+.header-big{
+	height: 50px !important;
+	box-sizing: border-box;
+}
+.controles{
+	padding-top: 10px;
+	width: 100%;
+	color : white;
+	height: 40px;
+	background: #002276;
+	border-bottom: 3px solid #d5802d;
+
+}
+.button-back{
+	margin-top:-15px;
+	color: #d5802d;
+}
+.text-button{
+	margin-left: 10px;
+}
+.controles-title{
+	width: 90%;
+	display: inline-block;
+	text-align: center;
+}
+.estado{
+    margin-top: -42px;
+    left: 0;
+    padding-left: 188px;
+    box-sizing: border-box
+}
+.lista-imagen{
+	width: 60px !important;
+	height: 45px !important;
+	max-width: 60px  !important;
+	max-height: 45px !important;
+	border-radius: 0px !important;
+}
+.list-text{
+	padding-left: 7px !important;
+	box-sizing: border-box;;
+	color: #5A5A5A;
+}
+.logo-aseguradora{
+	text-align: center;
+	display: inline-block;
+	width: 35%;
+}
+.info-poliza{
+	padding-top: 10px;
+	width: 60%;
+	display: inline-block;
+}
+.inline-block{
+	display: inline-block;
+}
+.Dtipo-poliza{
+	width: 70%;
+	height: 25px;
+}
+.Dtipo-poliza >h4{
+	max-height: 25px;
+	overflow: hidden;
+	width: 100%;
+	height: 25px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.Destado{
+	width: 25%;
+	font-size: 10px;
+}
+.layout-info-poliza{
+	border-bottom: 	1px solid #d5802d;
+}
+.call{
+	text-align:  center;
+	background: #1D9136;
+	display: block;
+	width: 200px;
+	height: 200px !important;
+	max-height: 300px !important;
+	margin: 0 auto;
+	text-decoration: none;
+	position: relative;
+	margin-bottom: 20px;
+}
+.call img{
+	padding-top: 20px;
+	margin: 0 auto;
+}
+.call-text{
+	background: #116E20;
+	width: 100%;
+	height: 43px;
+	bottom: 0;
+	text-align: center;
+	font-size: 2em;
+	padding-top: 10px;
+	position:absolute;
+	color:#fff;
+}
+.info-personal{
+	padding-top: 1em;
+}
