@@ -34,7 +34,12 @@ angular.module('conexs')
 		url:'/notification/:notification_id',
 		templateUrl: 'templates/notification.html',
 		controller: 'NotificationCtrl'
-	});
+	})
+	.state('politicas',{
+		url:'/politicas',
+		templateUrl:'templates/politicas.html'
+	})
+	;
 
 	$urlRouterProvider.otherwise('/login');
 });

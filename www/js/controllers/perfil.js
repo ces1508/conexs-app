@@ -6,7 +6,7 @@ angular.module('conexs')
 	$scope.init = function(){
 
 		var req= {
-			url:'http://192.168.0.2:80/conexs/api-perfil.php',
+			url:'http://192.168.0.3:80/conexs/api-perfil.php',
 			method: 'POST',
 			data: {
 				cedula: window.localStorage['user']
@@ -24,7 +24,7 @@ angular.module('conexs')
 				console.log('for');
 				//console.log(response.data[0].estado);
 				if (response.data[i].estado === "ACTIVO"){
-					alert();
+					// alert();
 					$scope.perfil.pol_activas += 1; 
 					console.log('activo');
 				}

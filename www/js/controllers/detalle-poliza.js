@@ -3,7 +3,7 @@ angular.module('conexs')
 	$scope.info = {};
 	console.log($stateParams.poliza_id);
 	var req = {
-		url:'http://192.168.0.2:80/conexs/api-poliza.php',
+		url:'http://192.168.0.3:80/conexs/api-poliza.php',
 		method: 'POST',
 		contentType: 'aplication/json',
 		data: {
@@ -23,7 +23,7 @@ angular.module('conexs')
 
 	$scope.sendMail = function(){
 		var req= {
-			url : 'http://192.168.0.6:80/conexs/send-mail.php',
+			url : 'http://192.168.0.2:80/conexs/send-mail.php',
 			method: 'POST',
 			data:{
 				cedula: $scope.info.cedula_nit,

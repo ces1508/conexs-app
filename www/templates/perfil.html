@@ -1,18 +1,50 @@
-<ion-header-bar class=" bar bar-header bar-assertive">
-	<h1 class="title">Perfil</h1>
+<ion-header-bar class="header header-bar login-content">
+	<div class='button_1'>
+		<button class='button-icon icon ion-person'></button>
+	</div>
+	<div class="logo-bar">	
+		<img src="./img/logo_conexs.png">
+	</div> 
+	<div class='button_2'>
+		<button class='button-icon icon ion-android-notifications-none icon-right'></button></div>
 </ion-header-bar>
-<ion-content>
-<div class="controles">
-	<button class="button button-icon ion-chevron-left button-back" ></button><span class="text-button">Mis Pólizas</span>
-</div>
-	{{perfil.titular}}
 
-	<p>Cc. {{perfil.cedula_nit}}</p>
-	<p>Tel. {{perfil.telefono_contac}}</p>
-	<p>Dir. {{perfil.domicilio_contac}}</p>
-	<p>Email {{perfil.e_mail_contac}}</p>
-	<p>Total de polizas: {{perfil.num_polizas}}</p>
-	<p>Polizas activas: {{perfil.pol_activas}}</p>
-	<p>Polizas activas: {{perfil.pol_inactivas}}</p>
+<ion-content>
+	<div class="controles">
+		<button class="button button-icon ion-chevron-left button-back" ></button><span class="text-button">Perfil</span>
+	</div>
+	<div class="primer_item">
+		{{perfil.titular}}<br><br>
+	<div class="items">
+		<span>Cc.</span><span>{{perfil.cedula_nit}}</span>
+	</div>
+
+		<div class="items">
+
+			<span>Tel.</span><span>{{perfil.telefono_contac}}</span>
+		</div>
+
+	<div class="items">	
+
+		<span>Dir.</span><span>calle-21-#13-24</span>
+	</div>
+
+	<div class="items">
+
+		<span>E mail.</span><span> {{perfil.e_mail_contac}}</span>
+	</div>
+
+	<div class="segundo_item">
+		<p>Total de polizas: {{perfil.num_polizas}}</p>
+		<p>Polizas inactivas: {{perfil.pol_activas}}</p>
+		<p>Polizas activas: {{perfil.pol_inactivas}}</p>
+		<p>Polizas proximas a caducar: {{perfil.pol_inactivas}}</p>
+	</div>
+
+	<div class="tercer_item">
+	<p>Pagos en linea</p>
+	<p>Politicas de uso y privacidad</p>
+	<p>salir</p>
+</div>
 
 </ion-content>
