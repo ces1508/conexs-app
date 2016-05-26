@@ -3,7 +3,7 @@ angular.module('conexs')
 	$scope.info = {};
 	console.log($stateParams.poliza_id);
 	var req = {
-		url:'http://192.168.0.3:80/conexs/api-poliza.php',
+		url:'http://192.168.0.4/conexs/api-poliza.php',
 		method: 'POST',
 		contentType: 'aplication/json',
 		data: {

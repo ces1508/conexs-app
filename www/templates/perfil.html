@@ -3,7 +3,7 @@
 		<button class='button-icon icon ion-person'></button>
 	</div>
 	<div class="logo-bar">	
-		<img src="./img/logo_conexs.png">
+		<img src="./img/logos.png">
 	</div> 
 	<div class='button_2'>
 		<button class='button-icon icon ion-android-notifications-none icon-right'></button></div>
@@ -13,38 +13,53 @@
 	<div class="controles">
 		<button class="button button-icon ion-chevron-left button-back" ></button><span class="text-button">Perfil</span>
 	</div>
+
+
+
+
 	<div class="primer_item">
 		{{perfil.titular}}<br><br>
-	<div class="items">
-		<span>Cc.</span><span>{{perfil.cedula_nit}}</span>
 	</div>
+	<div class="pru">
+		<div class="item-1"style="white-space: 20px;">CC.</span><span>{{perfil.cedula_nit}}</span>
+		</div>
 
-		<div class="items">
-
+		<div class="item-2">
 			<span>Tel.</span><span>{{perfil.telefono_contac}}</span>
 		</div>
 
-	<div class="items">	
+		<div class="item-3">	
+			<span>Dir.</span><span>calle-21-#13-24</span>
+		</div>
 
-		<span>Dir.</span><span>calle-21-#13-24</span>
+	<div class="item-4">
+		<span>E-mail.</span><span> {{perfil.e_mail_contac}}</span>
+		</div>
 	</div>
 
-	<div class="items">
 
-		<span>E mail.</span><span> {{perfil.e_mail_contac}}</span>
-	</div>
+
+
+
 
 	<div class="segundo_item">
-		<p>Total de polizas: {{perfil.num_polizas}}</p>
-		<p>Polizas inactivas: {{perfil.pol_activas}}</p>
-		<p>Polizas activas: {{perfil.pol_inactivas}}</p>
-		<p>Polizas proximas a caducar: {{perfil.pol_inactivas}}</p>
+		
+		<span class="display-block">Total de polizas: <span>{{perfil.num_polizas}}</span></span>
+		<span class="display-block">Polizas inactivas: <span>{{perfil.pol_activas}}</span></span>
+		<span class="display-block">Polizas activas: <span>{{perfil.pol_inactivas}}</span></span>
+		<span class="display-block">Polizas proximas a caducar:  <span>{{perfil.pol_inactivas}}</span></span>
 	</div>
 
+
+
+
+
+
+	
 	<div class="tercer_item">
-	<p>Pagos en linea</p>
-	<p>Politicas de uso y privacidad</p>
-	<p>salir</p>
-</div>
+		<p>Pagos en linea</p>
+		<p>Politicas de uso y privacidad</p>
+		<p>salir</p>
+	</div>
 
 </ion-content>

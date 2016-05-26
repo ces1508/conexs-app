@@ -6,7 +6,7 @@ angular.module('conexs')
 
 		var req = {
 			method: 'POST',
-			url: 'http://192.168.0.2:80/conexs/loginapi.php',
+			url: 'http://192.168.0.4:80/conexs/loginapi.php',
 			//url: 'http://192.168.1.5:80/conexs/loginapi.php',
 			data: {
 				cedula: $scope.user.cedula

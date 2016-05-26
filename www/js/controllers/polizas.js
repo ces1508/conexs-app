@@ -7,7 +7,7 @@ angular.module('conexs')
 		}
 		$scope.list = {};
 		var req = {
-			url: 'http://192.168.0.3:80/conexs/list-polizas.php',
+			url: 'http://192.168.0.4:80/conexs/list-polizas.php',
 			method: 'POST',
 			data: {
 				user: window.localStorage['user']

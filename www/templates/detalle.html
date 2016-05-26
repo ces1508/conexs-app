@@ -1,4 +1,12 @@
 <ion-header-bar class="bar bar-header login-content">
+	<div class='button_1'>
+		<button class='button-icon icon ion-person'></button>
+	</div>
+	<div class="logo-bar">	
+		<img src="./img/logos.png">
+	</div> 
+	<div class='button_2'>
+		<button class='button-icon icon ion-android-notifications-none icon-right'></button></div>
 </ion-header-bar>
 <ion-content>
 	<div class="controles">
@@ -9,39 +17,39 @@
 			<img src="http://conexseguros.com/images/logo-global.jpg" alt="">
 		</div>
 		<div class="info-poliza">
-			<div>
+			<div styles="position:relative;">
 				<div class="inline-block Dtipo-poliza">
-					<h4 >{{info.tipo_poliza}}</h4>
+				<h4 >{{info.tipo_poliza}}</h4>
 				</div>
-					<div ng-switch on ="info.estado" class="inline-block Destado">
+				<div ng-switch on ="info.estado" class="inline-blockDestado">
 						<span class="list-text" ng-switch-when="ACTIVO" style="color:Green"> {{info.estado}}</span>
 						<span  class="list-text" ng-switch-when="INACTIVO" style="color:RED">{{info.estado}}</span>
 						<span class="list-text" ng-switch-default >{{info.estado}}</span>
 					</div>
-				<p>Fecha de inicio:{{info.fecha_inicial}}</p>
-				<p>Vence: {{info.fecha_final}} </p>	
+				<p><b>Fecha de inicio:</b>{{info.fecha_inicial}}</p>
+				<p style="color:RED"><b>Vence:</b> {{info.fecha_final}}</p>	
 			</div>
 		</div>
 		<a href="tel:3202898982" ng-click="sendMail()" class="call">
 			 <img src="./img/call.png" alt="imagen telefono">
 			 <div class="call-text"><p>Llamar</p> </div>
 		</a>
-		
 	</section>
 	<section class="info-personal">
 		<div class="tipo-poliza" ng-switch on="info.tipo_poliza">
-			<p>Titular de la póliza: <span>{{info.titular}}</span></p>
-			<p>Cc: <span>{{info.cedula_nit}}</span></p>
-			<p> email: <span>{{info.e_mail_contac}}</span></p>
-			<p ng-if ="info.domicilio_contac != 'N/A'">Dirección: <span>{{info.domicilio_contac}}</span></p>
-			<p ng-if ="info.empresa != 'N/A'">Dirección: <span>{{info.empresa}}</span></p>
+			<p><b>Titular de la póliza:</b><span>{{info.titular}}</span></p>
+			<p><b>CC:</b><span>{{info.cedula_nit}}</span></p>
+			<p><b>E-mail:</b> <span>{{info.e_mail_contac}}</span></p>
+			<p ng-if ="info.domicilio_contac != 'N/A'"><b>Dirección:</b><span>{{info.domicilio_contac}}</span></p>
+			<p ng-if ="info.empresa != 'N/A'"><b>Dirección:</b><span>{{info.empresa}}</span></p>
 			<div ng-switch-when="AUTOMOVILES">
-				Placa: <p>{{info.placas}}</p>
+				<div class="placas" style="white-space: 20px;">Placa:</b><p></div>{{info.placas}}</p>
+
 				<p ng-if"info.empresa != 'N/A'">{{info.empresa}}</p>
 			</div>
 			<div ng-switch-when="MOTOCICLETA">
-				<p>Placa:  <span>{{info.placas}}</span></p>
-			</div>
+				<p><b>Placa:</b><span><p>{{info.placas}}</span></p>
+			</div>	
 			<div ng-switch-default>
 		
 			</div>

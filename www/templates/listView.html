@@ -4,7 +4,7 @@
     <button class='button-icon icon ion-person'></button>
   </div>
   <div class="logo-bar">  
-    <img src="./img/logo_conexs.png">
+    <img src="./img/logos.png">
   </div> 
   <div class='button_2'>
     <button class='button-icon icon ion-android-notifications-none icon-right'></button></div>
@@ -41,129 +41,6 @@
 		</div>
 
 
-<div class="list" >
-    <div ng-repeat ="poliza in list" >
-      <a class="item item-avatar" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box;">
-          <img src="http://conexseguros.com/images/logo-liberty.png" class="lista-imagen">
-          <h2 class="list-text" >{{poliza.tipo_poliza}}</h2>
-            <div ng-switch on="poliza.tipo_poliza">
-              <div ng-switch-when="CUMPLIMIENTO">
-                <p class="list-text" >{{poliza.titular}}</p>
-              </div>
-              <div ng-switch-when="RESPONSABILIDAD CIVIL">
-                <p class="list_text">{{poliza.titular}}</p>
-              </div>
-              <div ng-switch-default>
-                <p class="list-text"  ng-if="poliza.placas != 'N/A'">Placa: {{poliza.placas}}</p>
-              </div>
-            </div>
-          <div ng-switch on ="poliza.estado" class="estado">
-            <p  class="list-text" ng-switch-when="ACTIVO" style="color:Green"> {{poliza.estado}}</p>
-            <p  class="list-text" ng-switch-when="INACTIVO" style="color:RED">{{poliza.estado}}</p>
-            <p  class="list-text" ng-switch-default >{{poliza.estado}}</p>
-        </div>
-      </a>
-    </div>
-
-
-
-    <div class="list" >
-    <div ng-repeat ="poliza in list" >
-      <a class="item item-avatar" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box;">
-          <img src="http://conexseguros.com/images/logo-liberty.png" class="lista-imagen">
-          <h2 class="list-text" >{{poliza.tipo_poliza}}</h2>
-            <div ng-switch on="poliza.tipo_poliza">
-              <div ng-switch-when="CUMPLIMIENTO">
-                <p class="list-text" >{{poliza.titular}}</p>
-              </div>
-              <div ng-switch-when="RESPONSABILIDAD CIVIL">
-                <p class="list_text">{{poliza.titular}}</p>
-              </div>
-              <div ng-switch-default>
-                <p class="list-text"  ng-if="poliza.placas != 'N/A'">Placa: {{poliza.placas}}</p>
-              </div>
-            </div>
-          <div ng-switch on ="poliza.estado" class="estado">
-            <p  class="list-text" ng-switch-when="ACTIVO" style="color:Green"> {{poliza.estado}}</p>
-            <p  class="list-text" ng-switch-when="INACTIVO" style="color:RED">{{poliza.estado}}</p>
-            <p  class="list-text" ng-switch-default >{{poliza.estado}}</p>
-        </div>
-      </a>
-    </div>
-
-
-    <div class="list" >
-    <div ng-repeat ="poliza in list" >
-      <a class="item item-avatar" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box;">
-          <img src="http://conexseguros.com/images/logo-liberty.png" class="lista-imagen">
-          <h2 class="list-text" >{{poliza.tipo_poliza}}</h2>
-            <div ng-switch on="poliza.tipo_poliza">
-              <div ng-switch-when="CUMPLIMIENTO">
-                <p class="list-text" >{{poliza.titular}}</p>
-              </div>
-              <div ng-switch-when="RESPONSABILIDAD CIVIL">
-                <p class="list_text">{{poliza.titular}}</p>
-              </div>
-              <div ng-switch-default>
-                <p class="list-text"  ng-if="poliza.placas != 'N/A'">Placa: {{poliza.placas}}</p>
-              </div>
-            </div>
-          <div ng-switch on ="poliza.estado" class="estado">
-            <p  class="list-text" ng-switch-when="ACTIVO" style="color:Green"> {{poliza.estado}}</p>
-            <p  class="list-text" ng-switch-when="INACTIVO" style="color:RED">{{poliza.estado}}</p>
-            <p  class="list-text" ng-switch-default >{{poliza.estado}}</p>
-        </div>
-      </a>
-    </div>
-
-
-    <div class="list" >
-    <div ng-repeat ="poliza in list" >
-      <a class="item item-avatar" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box;">
-          <img src="http://conexseguros.com/images/logo-liberty.png" class="lista-imagen">
-          <h2 class="list-text" >{{poliza.tipo_poliza}}</h2>
-            <div ng-switch on="poliza.tipo_poliza">
-              <div ng-switch-when="CUMPLIMIENTO">
-                <p class="list-text" >{{poliza.titular}}</p>
-              </div>
-              <div ng-switch-when="RESPONSABILIDAD CIVIL">
-                <p class="list_text">{{poliza.titular}}</p>
-              </div>
-              <div ng-switch-default>
-                <p class="list-text"  ng-if="poliza.placas != 'N/A'">Placa: {{poliza.placas}}</p>
-              </div>
-            </div>
-          <div ng-switch on ="poliza.estado" class="estado">
-            <p  class="list-text" ng-switch-when="ACTIVO" style="color:Green"> {{poliza.estado}}</p>
-            <p  class="list-text" ng-switch-when="INACTIVO" style="color:RED">{{poliza.estado}}</p>
-            <p  class="list-text" ng-switch-default >{{poliza.estado}}</p>
-        </div>
-      </a>
-    </div>
-
-
-     <div class="list" >
-    <div ng-repeat ="poliza in list" >
-      <a class="item item-avatar" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box;">
-          <img src="http://conexseguros.com/images/logo-liberty.png" class="lista-imagen">
-          <h2 class="list-text" >{{poliza.tipo_poliza}}</h2>
-            <div ng-switch on="poliza.tipo_poliza">
-              <div ng-switch-when="CUMPLIMIENTO">
-                <p class="list-text" >{{poliza.titular}}</p>
-              </div>
-              <div ng-switch-when="RESPONSABILIDAD CIVIL">
-                <p class="list_text">{{poliza.titular}}</p>
-              </div>
-              <div ng-switch-default>
-                <p class="list-text"  ng-if="poliza.placas != 'N/A'">Placa: {{poliza.placas}}</p>
-              </div>
-            </div>
-          <div ng-switch on ="poliza.estado" class="estado">
-            <p  class="list-text" ng-switch-when="ACTIVO" style="color:Green"> {{poliza.estado}}</p>
-            <p  class="list-text" ng-switch-when="INACTIVO" style="color:RED">{{poliza.estado}}</p>
-            <p  class="list-text" ng-switch-default >{{poliza.estado}}</p>
-        </div>
-      </a>
     </div>
 
 

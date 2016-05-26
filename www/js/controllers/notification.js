@@ -5,7 +5,7 @@ angular.module('conexs')
 
 	var req= {
 		method: 'GET',
-		url: 'http://192.168.0.3/conexs/saveDeviceInfo.php',
+		url: 'http://192.168.0.4:80/conexs/saveDeviceInfo.php',
 	};
 	$http(req).then(function(response){
 		console.log(response.data.ok);

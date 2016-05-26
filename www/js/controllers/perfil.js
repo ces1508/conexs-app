@@ -6,7 +6,7 @@ angular.module('conexs')
 	$scope.init = function(){
 
 		var req= {
-			url:'http://192.168.0.3:80/conexs/api-perfil.php',
+			url:'http://192.168.0.4:80/conexs/api-perfil.php',
 			method: 'POST',
 			data: {
 				cedula: window.localStorage['user']
