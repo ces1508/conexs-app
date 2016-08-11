@@ -17,14 +17,14 @@
             <img ng-switch-when ="ASEGURADORA SOLIDARIA DE COLOMBIA" src="./img/aseguradoraSolidaria.png">
             <img ng-switch-when ="ALLIANZ" src="./img/allianz.png">
             <img ng-switch-when ="EQUIDAD SEGUROS" ng-src="./img/equidadSeguros.png">
-            <img ng-switch-when ="LIBERTY SEGUROS S.A." ng-src="/img/liberty.png">
-            <img ng-switch-when ="MAPFRE" src="/img/mapfre.png">
-            <img ng-switch-when ="MAPFRE COLOMBIA" ng-src="/img/mapfre.png">
-            <img ng-switch-when ="MAPFRE SEGUROS COLOMBIA" ng-src="/img/mapfre.png">
-            <img ng-switch-when ="LA PREVISORA S.A." ng-src="/img/previsora.png">
-            <img ng-switch-when ="PREVISORA SEGUROS" ng-src="/img/previsora.png">
-            <img ng-switch-when ="AXA COLPATRIA SEGUROS S.A." ng-src="/img/axa.png">
-            <img ng-switch-when ="ROYAL & SUN ALLIANCE SEGUROS (COLOMBIA) S.A.S." src="/img/rsa.png" class="lista-imagen">
+            <img ng-switch-when ="LIBERTY SEGUROS S.A." ng-src="./img/liberty.png">
+            <img ng-switch-when ="MAPFRE" src="./img/mapfre.png">
+            <img ng-switch-when ="MAPFRE COLOMBIA" ng-src="./img/mapfre.png">
+            <img ng-switch-when ="MAPFRE SEGUROS COLOMBIA" ng-src="./img/mapfre.png">
+            <img ng-switch-when ="LA PREVISORA S.A." ng-src="./img/previsora.png">
+            <img ng-switch-when ="PREVISORA SEGUROS" ng-src="./img/previsora.png">
+            <img ng-switch-when ="AXA COLPATRIA SEGUROS S.A." ng-src="./img/axa.png">
+            <img ng-switch-when ="ROYAL & SUN ALLIANCE SEGUROS (COLOMBIA) S.A.S." src="./img/rsa.png" class="lista-imagen">
 		</div>
 		<div class="info-poliza">
 			<div styles="position:relative;">
@@ -41,9 +41,9 @@
 				<p style="color:RED"><b>Vencimiento:</b> {{informacion.fecha_final}}</p>
 			</div>
 		</div>
-		<a ng-click="sendMail({{informacion.llamar}})" class="call">
+		<a ng-click="sendMail(informacion.llamar)" class="call">
 			 <img src="./img/call.png" alt="imagen telefono">
-			 <div class="call-text"><p>Click Aquí</p> </div>
+			 <div class="call-text"><p>Asistencia Aquí </p> </div>
 		</a>
 		<div class="siniestros">
 			<div ng-if="numSiniestros < 1 ">
@@ -61,7 +61,7 @@
 			<p><b>Titular:</b><span>{{informacion.titular}}</span></p>
 			<p><b>CC:</b><span>{{informacion.cedula_nit}}</span></p>
 			<p><b>E-mail:</b> <span>{{informacion.e_mail_contac}}</span></p>
-			<p><b>poliza N°:</b> <span>{{informacion.poliza}}</span></p>
+			<p><b>póliza N°:</b> <span>{{informacion.poliza}}</span></p>
 			<p ng-if ="informacion.domicilio_contac != 'N/A'"><b>Dirección:</b><span>{{informacion.domicilio_contac}}</span></p>
 			<p ng-if ="informacion.empresa != 'N/A'"><b>Dirección:</b><span>{{informacion.empresa}}</span></p>
 			<div class="tipo-poliza" ng-if="informacion.tipo_poliza =='MOTOCICLETA' || informacion.tipo_poliza =='AUTOMOVILES'  || informacion.tipo_poliza =='AUTOMOVILES SOAT' || informacion.tipo_poliza =='MOTOCICLETA SOAT'">

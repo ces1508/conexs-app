@@ -241,7 +241,7 @@ a{
 	height: 43px;
 	bottom: 0;
 	text-align: center;
-	font-size: 2em;
+	font-size: 1.5em;
 	padding-top: 10px;
 	position:absolute;
 	color:#fff;
@@ -494,4 +494,10 @@ a{
 }
 .capitalize{
 	text-transform: capitalize;
+}
+.footer{
+	color:white;
+	position: absolute;
+	line-height: 0.8;
+	bottom: 1em;
 }
