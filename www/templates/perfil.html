@@ -1,65 +1,33 @@
 <ion-header-bar class="header header-bar login-content">
-	<div class='button_1'>
-		<button class='button-icon icon ion-person'></button>
+	<div style ="width:100%; "ng-include="'templates/partials/menu-bar.html'" ng-controller="NoifiCtrl"></div>
+	<div class="controles">
+		<button class="button button-icon ion-chevron-left button-back" ui-sref="polizas" ></button><span class="controles-title">Perfil</span>
 	</div>
-	<div class="logo-bar">	
-		<img src="./img/logos.png">
-	</div> 
-	<div class='button_2'>
-		<button class='button-icon icon ion-android-notifications-none icon-right'></button></div>
 </ion-header-bar>
 
-<ion-content>
-	<div class="controles">
-		<button class="button button-icon ion-chevron-left button-back" ></button><span class="text-button">Perfil</span>
-	</div>
-
-
-
-
+<ion-content style="margin-top:40px;">
 	<div class="primer_item">
-		{{perfil.titular}}<br><br>
+		<p style="height:43px;text-align:center; text-overflow: ellipsis;" >
+  				{{perfil.titular}}</p>
 	</div>
 	<div class="pru">
-		<div class="item-1"style="white-space: 20px;">CC.</span><span>{{perfil.cedula_nit}}</span>
-		</div>
-
-		<div class="item-2">
-			<span>Tel.</span><span>{{perfil.telefono_contac}}</span>
-		</div>
-
-		<div class="item-3">	
-			<span>Dir.</span><span>calle-21-#13-24</span>
-		</div>
-
-	<div class="item-4">
-		<span>E-mail.</span><span> {{perfil.e_mail_contac}}</span>
-		</div>
+		<span class="item-1"><strong>CC. </strong> <span>{{perfil.cedula_nit}}</span> </span>
+		<span class="item-1"><strong>Tel.</strong><span>{{perfil.telefono_contac}}</span> </span>
+		<span class="item-1"><strong>Dir.</strong> <span>calle-21-#13-24</span></span>
+		<span class="item-1"><strong>E-mail.</strong> <span> {{perfil.e_mail_contac}}</span></span>
 	</div>
-
-
-
-
-
-
 	<div class="segundo_item">
 		
-		<span class="display-block">Total de polizas: <span>{{perfil.num_polizas}}</span></span>
-		<span class="display-block">Polizas inactivas: <span>{{perfil.pol_activas}}</span></span>
-		<span class="display-block">Polizas activas: <span>{{perfil.pol_inactivas}}</span></span>
-		<span class="display-block">Polizas proximas a caducar:  <span>{{perfil.pol_inactivas}}</span></span>
+		<span class="display-block">Total de Polizas: <span>{{perfil.num_polizas}}</span></span>
+		<span class="display-block">Polizas Activas: <span>{{perfil.pol_activas}}</span></span>
+		<span class="display-block">Polizas Inactivas: <span>{{perfil.pol_inactivas}}</span></span>
+		
 	</div>
-
-
-
-
-
-
-	
 	<div class="tercer_item">
-		<p>Pagos en linea</p>
-		<p>Politicas de uso y privacidad</p>
-		<p>salir</p>
+		<a style="display:block;width:100;"ui-sref="politicas">Políticas de uso y privacidad</a>
+		<button class="button button-clear" ng-click="salir()" style="color: #000;">
+  			Salir
+		</button>
 	</div>
 
 </ion-content>

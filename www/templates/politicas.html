@@ -1,18 +1,11 @@
 <ion-header-bar class="header header-bar login-content">
-	<div class='button_1'>
-		<button class='button-icon icon ion-person'></button>
+ 	<div style ="width:100%; "ng-include="'templates/partials/menu-bar.html'" ng-controller="NoifiCtrl"></div>
+	<div class="controles">
+		<button class="button button-icon ion-chevron-left button-back" ui-sref="polizas"></button><span class="controles-title">Politicas de uso y privacidad</span>
 	</div>
-	<div class="logo-bar">	
-		<img src="./img/logos.png">
-	</div> 
-	<div class='button_2'>
-		<button class='button-icon icon ion-android-notifications-none icon-right'></button></div>
 </ion-header-bar>
 
 <ion-content>
-	<div class="controles">
-		<button class="button button-icon ion-chevron-left button-back" ></button><span>Politicas de uso y privacidad</span>
-	</div>
 	<div class="contenido">
 		<h4>CONEXS SAS.</h4>
 		<P>La política de uso y privacidad es un apartado que

@@ -1,42 +1,55 @@
 <ion-header-bar class="bar-header bar login-content header-big">
-
-<div class='button_1'>
-    <button class='button-icon icon ion-person'></button>
-  </div>
-  <div class="logo-bar">  
-    <img src="./img/logos.png">
-  </div> 
-  <div class='button_2'>
-    <button class='button-icon icon ion-android-notifications-none icon-right'></button></div>
-    
-</ion-header-bar>
-<ion-content>
-	<div class="controles">
-		<button class="button button-icon ion-chevron-left button-back" ></button><span class="text-button">Mis Pólizas</span>
+ <div style ="width:100%; "ng-include="'templates/partials/menu-bar.html'" ng-controller="NoifiCtrl"></div>
+ <div class="controles">
+		<button class="button button-icon ion-chevron-left button-back" ></button><span class="controles-title">Mis Pólizas</span>
 	</div>
+</ion-header-bar>
+<ion-content style="margin-top:40px;">
 	<ion-list>
 
 		<div class="list" >
 		<div ng-repeat ="poliza in list" >
-			<a class="item item-avatar" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box;">
-      		<img src="http://conexseguros.com/images/logo-liberty.png" class="lista-imagen">
-      		<h2 class="list-text" >{{poliza.tipo_poliza}}</h2>
-      			<div ng-switch on="poliza.tipo_poliza">
-      				<div ng-switch-when="CUMPLIMIENTO">
-		      			<p class="list-text" >{{poliza.titular}}</p>
-      				</div>
-      				<div ng-switch-when="RESPONSABILIDAD CIVIL">
-      					<p class="list_text">{{poliza.titular}}</p>
-      				</div>
-      				<div ng-switch-default>
-      					<p class="list-text"  ng-if="poliza.placas != 'N/A'">Placa: {{poliza.placas}}</p>
-      				</div>
-      			</div>
-      		<div ng-switch on ="poliza.estado" class="estado">
-    				<p  class="list-text" ng-switch-when="ACTIVO" style="color:Green"> {{poliza.estado}}</p>
-    				<p  class="list-text" ng-switch-when="INACTIVO" style="color:RED">{{poliza.estado}}</p>
-    				<p  class="list-text" ng-switch-default >{{poliza.estado}}</p>
-  			</div>
+			<a class="item item-avatar" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box; padding-left:10px !important;">
+
+          <div ng-switch on="poliza.aseguradora" style="display: inline-block" class="item-image lista-imagen">
+      		  <img ng-switch-default src="./img/sublogo_1.png" style="max-width:60px;max-height:45px;">
+            <img ng-switch-when ="SEGUROS DEL ESTADO S.A." src="./img/seguresDelEstado.png">
+            <img ng-switch-when ="SEGUROS MUNDIAL" src="./img/mundial.png">
+            <img ng-switch-when ="SEGUROS COMERCIALES BOLIVAR" src="./img/bolivar.jpeg">
+            <img ng-switch-when ="AIG SEGUROS COLOMBIA S.A." src="./img/aig.png">
+            <img ng-switch-when ="AIG SEGUROS COLOMBIA S.A" src="./img/aig.png">
+            <img ng-switch-when ="ASEGURADORA SOLIDARIA DE COLOMBIA" src="./img/aseguradoraSolidaria.png">
+            <img ng-switch-when ="ALLIANZ" src="./img/allianz.png">
+            <img ng-switch-when ="EQUIDAD SEGUROS" src="./img/equidadSeguros.png">
+            <img ng-switch-when ="LIBERTY SEGUROS S.A." src="./img/liberty.png">
+            <img ng-switch-when ="MAPFRE" src="./img/mapfre.png">
+            <img ng-switch-when ="MAPFRE COLOMBIA" src="./img/mapfre.png">
+            <img ng-switch-when ="MAPFRE SEGUROS COLOMBIA" src="./img/mapfre.png">
+            <img ng-switch-when ="LA PREVISORA S.A." src="./img/previsora.png">
+            <img ng-switch-when ="PREVISORA SEGUROS" src="./img/previsora.png">
+            <img ng-switch-when ="AXA COLPATRIA SEGUROS S.A." src="./img/axa.png">
+            <img ng-switch-when ="SURA" src="./img/sura.png">
+            <img ng-switch-when ="ROYAL & SUN ALLIANCE SEGUROS (COLOMBIA) S.A.S." src="./img/rsa.png" class="lista-imagen">
+          </div >
+          <div class="list-text">
+        		<h2 class="">{{poliza.tipo_poliza}}</h2>
+        			<div ng-switch on="poliza.tipo_poliza">
+        				<div ng-switch-when="CUMPLIMIENTO">
+  		      			<p>{{poliza.titular}}</p>
+        				</div>
+        				<div ng-switch-when="RESPONSABILIDAD CIVIL">
+        					<p class="list_text">{{poliza.titular}}</p>
+        				</div>
+        				<div ng-switch-default>
+        					<p ng-if="poliza.placas != 'N/A'">Placa: {{poliza.placas}}</p>
+        				</div>
+        			</div>
+        		<div ng-switch on ="poliza.estado" class="estado" >
+      				<p ng-switch-when="ACTIVO" style="color:Green;overflow:visible;"> {{poliza.estado}}</p>
+      				<p ng-switch-when="INACTIVO" style="color:RED;overflow:visible;">{{poliza.estado}}</p>
+      				<p ng-switch-default style="overflow:visible;" >{{poliza.estado}}</p>
+            </div>
+          </div>
     	</a>
 		</div>
 

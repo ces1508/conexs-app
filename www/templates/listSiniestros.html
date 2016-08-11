@@ -1,0 +1,17 @@
+<ion-header-bar class="bar-header bar login-content header-big">
+ <div style ="width:100%; "ng-include="'templates/partials/menu-bar.html'" ng-controller="NoifiCtrl"></div>
+ <div class="controles">
+		<button class="button button-icon ion-chevron-left button-back"  ng-click="back()"></button><span class="controles-title">Siniestros</span>
+	</div>
+</ion-header-bar>
+<ion-content style="margin-top:40px;">
+  <div class="list">
+    <a  ng-repeat="item in lista" href="#/siniestro/{{item.num_siniestro}}" class="item item-icon-right">
+      <h1 class="title center-text" style="margin-left:0 !important;">{{item.causa}}</h1>
+      <h3 style="font-weight: 100;">Fecha: {{item.fecha_acci}}</h3>
+      <i class="icon icon-right ion-ios-arrow-right" style="color:#666;"></i>
+    </a>
+
+
+  </div>
+</ion-content>

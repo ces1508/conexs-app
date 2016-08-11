@@ -1,0 +1,38 @@
+<ion-header-bar class="bar-header bar login-content header-big">
+  <div style ="width:100%; "ng-include="'templates/partials/menu-bar.html'" ng-controller="NoifiCtrl"></div>
+  <div class="controles"  style="text-align:left !important;">
+		<button class="button button-icon ion-chevron-left button-back"  ng-click="back()"></button>
+	</div>
+</ion-header-bar>
+<ion-content style="margin-top:40px;">
+  <section class="capitalize">
+    <div class="card">
+      <div class="item item-divider center title">
+        información de la poliza
+      </div>
+      <div class="item item-text-wrap">
+        <p><b>Poliza N° </b>: {{siniestro.poliza}}</p>
+        <p><b>Tipo de Poliza</b> : {{siniestro.tipo_poliza}}</p>
+        <p><b>Aseguradora:</b> {{siniestro.aseguradora}}</p>
+      </div>
+    </div>
+  </section>
+  <section class="capitalize">
+    <div class="card">
+      <div class="item item-divider center title">
+        Información del Siniestro
+      </div>
+      <div class="item item-text-wrap">
+        <p><b>fecha°:</b> {{siniestro.fecha_acci}}</p>
+        <p><b>causa :</b> {{siniestro.causa}}</p>
+
+        <p><b>Heridos:</b> {{siniestro.heridos}}</p>
+        <p><b>Daños Materiales:</b> {{siniestro.danios}} </p>
+        <p><b>estado : </b>{{siniestro.estado}}</p>
+        <p><b>Muertos:</b> {{siniestro.muertos}}</p>
+        <p><b>Fotos:</b> {{siniestro.fotos}} </p>
+        <p><b>observaciones :</b>{{siniestro.observaciones}}</p>
+    </div>
+    </div>
+  </section>
+</ion-content>

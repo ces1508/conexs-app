@@ -1,12 +1,26 @@
-<ion-header-bar class="header bar bar-possitive">
-<div class='button_1'>
-	<button class='button-icon icon ion-person'></button></div>
-<div class="logo-bar">	
-	<img src="./img/logos.png">
-</div> 
-<div class='button_2'>
-	<button class='button-icon icon ion-android-notifications-none icon-right'></button></div>
+<ion-header-bar class="header bar login-content">
+	<div style ="width:100%; "ng-include="'templates/partials/menu-bar.html'" ng-controller="NoifiCtrl"></div>
+ 	<div class="controles">
+    	<button class="button button-icon ion-chevron-left button-back" ui-sref="notifications" ></button>
+    	<span class="controles-title">Notificaciones</span>
+  	</div>
 </ion-header-bar>
-<ion-content>
-	contenido de la notiicación
+<ion-content style="margin-top:40px;">
+
+<div id="content-notification">
+	<div>
+		<h2 id="notification-title">{{notification.titulo}}</h2>
+	</div>
+	<div class="notification-body">
+		<p>{{notification.body}}</p>
+		<div ng-if="notification.url != '' && notification.link_nombre != ''">
+			 <a href="{{notification.url}}">
+				{{notification.link_nombre}}</a>
+				<!-- <a href="#" ng-click='goLink({{notification.url}})'>{{notification.link_nombre}}</a> -->
+		</div>
+	</div>
+
+
+</div>
+
 </ion-content>

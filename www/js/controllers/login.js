@@ -1,13 +1,12 @@
 angular.module('conexs')
-.controller('LoginCtrl',['$scope','$http','$state','pushNotifications',function($scope,$http,$state,pushNotifications){
+.controller('LoginCtrl',['$scope','$http','$state',function($scope,$http,$state){
 	//console.o
 	$scope.user ={};
 	$scope.login = function(){
-
 		var req = {
 			method: 'POST',
-			url: 'http://192.168.0.4:80/conexs/loginapi.php',
-			//url: 'http://192.168.1.5:80/conexs/loginapi.php',
+			url: 'http://192.168.0.8:80/conexs/loginapi.php',
+			//url: 'http://192.168.0.8:80/conexs/loginapi.php',
 			data: {
 				cedula: $scope.user.cedula
 			}
@@ -22,8 +21,7 @@ angular.module('conexs')
 			}
 			if(response.data.ok){
 				window.localStorage['user'] = $scope.user.cedula;
-				//pushNotifications.sendDeviceInfo(window.localStorage['user']);
-				$state.go('polizas');
+				$state.go('polizas',{},{reload: true});
 			}
 		},function(error){
 			alert('error :' +  error.data);

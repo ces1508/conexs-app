@@ -3,7 +3,9 @@ body{
 	font-family: Roboto !important;
 	font-size: 16px;
 }
-
+.center{
+	text-align: center;
+}
 .login-content{
 	background: rgba(0,34,118,1);
 	background: -moz-linear-gradient(top, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
@@ -14,30 +16,38 @@ body{
 	background: linear-gradient(to bottom, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002276', endColorstr='#013c95', GradientType=0 );
 }
+.button_1{
+	width: 10%;
+	display: inline-block;
+	vertical-align: top;
 
+
+}
 .button_1 button{
 	color: white;
 }
 
+a{
+	text-decoration: none;
+}
 
 .button_2{
 	margin-left: auto;
-	color: white;
+	width: 10%;
+	display: inline-block;
+	float: right;
+	position: relative;
 }
-
+.button_2 button{
+	padding: 0 !important;
+	color:white;
+}
 .img_logo{
 	margin-left: 25%;
+	width: 67%;
+	display: inline-block;
 }
 
-.button_2 button{
-	color: white;
-}
-
-.controles{
-
-	text-align: center;
-	font-size: 2em;
-}
 
 .img-logo{
 	width: 60%;
@@ -91,52 +101,67 @@ body{
 }
 
 .controles{
-	padding-top: 10px;
 	width: 100%;
 	color : white;
 	height: 40px;
 	background: #002276;
 	border-bottom: 3px solid #d5802d;
-	display: flex;
 	background: #031169;
 	font-family: Roboto;
+	top:44px;
+	position: fixed;
+	left:0;
+	text-align: center;
+	font-size: 2e
 }
 
 .button-back{
-	margin-top:-15px;
+
 	color: #FFFFFF;
 }
 
 .text-button{
-	margin-left: 32%;
-	width: 100px;
+	width: 85%;
+
 }
 
 .controles-title{
 	width: 80%;
 	display: inline-block;
 	text-align: center;
+	padding-top: 7px;
+	margin-right: 5%;
 }
 
-.estado{
-    margin-top: -42px;
-    left: 0;
-    padding-left: 188px;
-    box-sizing: border-box
-}
 
 .lista-imagen{
-	width: 60px !important;
-	height: 45px !important;
-	max-width: 60px  !important;
-	max-height: 45px !important;
-	border-radius: 0px !important;
-}
 
+	position: static !important;
+	display: inline-block;
+	width: 27% !important;
+	max-width: 27% !important;
+	max-height: auto !important;
+	height: auto !important;
+	vertical-align: top;
+}
+.lista-imagen img{
+	border-radius: 0px !important;
+	height: auto !important;
+	max-height: 40px !important;
+}
 .list-text{
-	padding-left: 7px !important;
+	position: relative;
+	padding-left: 15px !important;
 	box-sizing: border-box;;
 	color: #5A5A5A;
+	width: 78%;
+	overflow: visible;
+	display: inline-block;
+}
+.estado{
+	position: absolute;
+	top: -14px;
+	right: 25px;
 }
 
 .logo-aseguradora{
@@ -147,7 +172,7 @@ body{
 	vertical-align: top;
 	padding-top: 25px;
 }
-  	
+
 .info-poliza{
 	padding-top: 10px;
 	width: 62%;
@@ -167,14 +192,13 @@ body{
 }
 
 .Dtipo-poliza{
-	width: 70%;
+	width: 100%;
 	height: 25px;
 	padding-top: 0px;
 }
 
 .Dtipo-poliza >h4{
 	max-height: 25px;
-	overflow: hidden;
 	width: 100%;
 	height: 25px;
 	/*text-overflow: ellipsis;*/
@@ -190,6 +214,7 @@ body{
 
 .layout-info-poliza{
 	border-bottom: 	1px solid #d5802d;
+	margin-top: 40px;
 }
 
 .call{
@@ -229,9 +254,12 @@ body{
 }
 
 .logo-bar{
-	margin-left: 2em;
-	max-width: 35px;
+	margin-left: 1em;
+	width: 67%;
 	height: 35px;
+	display: inline-block;
+	text-align: center;
+
 }
 
 .logo-bar img{
@@ -239,8 +267,8 @@ body{
 }
 
 .lista-notificaciones{
-	width: 100%;	
-	height: 200px;	
+	width: 100%;
+	height: 200px;
 	border-top-width: 10px;
 	box-sizing: border-box;
 	padding: 1em;
@@ -261,14 +289,17 @@ body{
 	vertical-align: top;
 	height: 40px;
 	max-height: 40px !important;
-}
-
-.imagen-notifacation{
 	max-width: 100%;
 	height: 100%;
 	padding-right: 50px;
+
 }
 
+.notifications-title{
+	width: 90%;
+	display: inline-block;
+	white-space: normal !important;
+}
 .notification-text{
 	display: inline-block;
 	height: 85%;
@@ -278,7 +309,7 @@ body{
 	margin:0 !important;
 	line-height: 10px;
 	color:gray;
-	font-size:20px; 
+	font-size:20px;
 	overflow: visible!important;
 }
 
@@ -286,6 +317,7 @@ body{
 	margin-left: 4em;
 	font-weight: bold;
 	font-size: 130%;
+
 }
 
 .no-padding{
@@ -295,8 +327,7 @@ body{
 }
 
 .primer_item{
-	padding-left: 20px;
-	padding-right:20px;
+	padding: 1em 0px 1em 0px;
 }
 
 .segundo_item{
@@ -311,8 +342,8 @@ body{
 }
 
 .segundo_item span{
-	
-	
+
+
 }
 
 .tercer_item{
@@ -338,39 +369,27 @@ body{
 }
 
 .pru{
-
-	display: relative;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 .item-1{
-	padding-left: 20px;
-	position: relative;
-}	
-.item-2{
-	padding-left: 20px;
-
+	display: block;
+}
+.item-1 > span{
+	float: right;
 
 }
-
-.item-3{
-	padding-left: 20px;
-}
-
-.item-4{
-
-	padding-left: 20px;
-}
-
 .controles span{
 	font-size: 20px;
     text-align: center;
     padding-left: 20px;
-    padding-left:0px; 
+    padding-left:0px;
     font-weight: 800;
 }
 
 .contenido{
 	padding-left: 15px;
-	padding-right:15px; 
+	padding-right:15px;
 	border-bottom: 1px solid #d5802d ;
 }
 
@@ -379,15 +398,13 @@ body{
 	text-align: center;
 	padding-left:10px;
 	padding left: 10px;
-	padding-top: 5px; 
+	padding-top: 5px;
 }
 
 .item{
-	overflow: visible!important;	
-	border-bottom: #d5802d;
+	border-bottom: 2px solid #d5802d;
 	padding:0 10px 0 10px;
 	display: block;
-	border-width: 0
 }
 
 .subfooter{
@@ -396,7 +413,7 @@ body{
 
 .list a{
 	padding-left:55px;
-	padding-top:15px; 
+	padding-top:15px;
 }
 
 .list img{
@@ -407,15 +424,6 @@ body{
 	margin-left: -16px;
 }
 
-.list{
-	border-bottom: 1px solid #d5802d;
-	padding-bottom: 0;
-}
-
-.tipo-poliza p{
-
-	display: inline-block;
-}
 
 .MOTOCICLETA b{
 
@@ -429,7 +437,7 @@ body{
 
 .inline-blockDestado span{
 	position:absolute;
- 	top:70px;
+ 	top:5px;
  	left:73%;
 }
 
@@ -441,10 +449,6 @@ body{
 	padding-right:5px;
 }
 
-.placas{
-	display: inline-block;
-	padding-right: 50%;
-}
 
 .display-block{
 
@@ -454,4 +458,40 @@ body{
 .display-block > span{
 
 	float: right;
+}
+#content-notification{
+	padding: 0 20px;
+	margin-top: 2em;
+}
+
+#notification-title{
+	font-size:20px;
+	color: #d5802d;
+	font-family: Roboto;
+	text-align: center;
+	border-bottom: 3px dotted #D5D0D3;
+}
+.notification-body{
+	padding-top: 10px;
+	width: 100%;
+	font-size: 1em;
+
+}
+.notification{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: red;
+	position: absolute;
+	top: 0;
+	right: 2px;
+	/*display: none;*/
+}
+.siniestros{
+	width: 100%;
+	font-size: 20px;
+	text-align: center;
+}
+.capitalize{
+	text-transform: capitalize;
 }
