@@ -18,6 +18,7 @@ angular.module('conexs')
 	})
 	.state('perfil',{
 		url: '/perfil',
+		cache:false,
 		templateUrl: 'templates/perfil.html',
 		controller:'PerfilCtrl'
 	})
@@ -39,6 +40,12 @@ angular.module('conexs')
 		templateUrl:'templates/dSiniestro.html',
 		controller:'dSiniestroCtrl'
 	})
+	.state('atencion',{
+		url:'/poliza/:id/atencion',
+		cache:true,
+		templateUrl:'templates/atencion.html',
+		controller:'atencionCtrl'
+	})
 	.state('notifications',{
 		url:'/notifications',
 		cache: false,
@@ -53,6 +60,7 @@ angular.module('conexs')
 	})
 	.state('politicas',{
 		url:'/politicas',
+		cache:false,
 		templateUrl:'templates/politicas.html'
 	})
 	;

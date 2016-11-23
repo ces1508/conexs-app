@@ -119,7 +119,9 @@ a{
 
 	color: #FFFFFF;
 }
-
+.item-image img:first-child, .item-image .list-img {
+	max-width: 100px;
+}
 .text-button{
 	width: 85%;
 
@@ -161,24 +163,40 @@ a{
 .estado{
 	position: absolute;
 	top: -14px;
-	right: 25px;
+	right: 40px;
 }
 
 .logo-aseguradora{
-	width: 35%;
-	display: inline-block;
-	text-align: center;
+	width: 100%;
+	display:block;
 	box-sizing: 20px;
 	vertical-align: top;
 	padding-top: 25px;
+	text-align: center;
+	max-height: 55px;
+}
+.logo-aseguradora > .img-aseguradora{
+	width: 50%;
+	text-align: center;
+	display: inline-block;;
+}
+.img-aseguradora >img{
+	min-height: 35px;
+	max-height: 45px;
+	min-width: 100px;
+
+}
+.estado-poliza{
+	width: 47%;
+	top:-10px;
+	position: relative;
+	display: inline-block;
 }
 
 .info-poliza{
-	padding-top: 10px;
-	width: 62%;
-	height: 40px;
-	display: inline-block;
-	padding-right: 16px;
+	width: 100%;
+	text-align: center;
+
 
 }
 
@@ -201,10 +219,8 @@ a{
 	max-height: 25px;
 	width: 100%;
 	height: 25px;
-	/*text-overflow: ellipsis;*/
-    /*white-space: nowrap;*/
-   padding-right: 10px;
-   display: inline-block;
+	padding-right: 10px;
+	display: inline-block;
 }
 
 .Destado{
@@ -340,12 +356,6 @@ a{
 	padding-right: 10px;
 
 }
-
-.segundo_item span{
-
-
-}
-
 .tercer_item{
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -399,9 +409,19 @@ a{
 	padding-left:10px;
 	padding left: 10px;
 	padding-top: 5px;
+	color:white;
+	/*background: rgba(0,34,118,1);
+	background: -moz-linear-gradient(top, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,34,118,1)), color-stop(40%, rgba(0,34,118,1)), color-stop(100%, rgba(1,60,149,1)));
+	background: -webkit-linear-gradient(top, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
+	background: -o-linear-gradient(top, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
+	background: -ms-linear-gradient(top, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
+	background: linear-gradient(to bottom, rgba(0,34,118,1) 0%, rgba(0,34,118,1) 40%, rgba(1,60,149,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002276', endColorstr='#013c95', GradientType=0 );*/
+
 }
 
-.item{
+.itemc{
 	border-bottom: 2px solid #d5802d;
 	padding:0 10px 0 10px;
 	display: block;
@@ -495,9 +515,47 @@ a{
 .capitalize{
 	text-transform: capitalize;
 }
-.footer{
-	color:white;
+
+/*vemntana modal*/
+.modal{
+	width: 100%;
+	height: 100%
 	position: absolute;
-	line-height: 0.8;
-	bottom: 1em;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	display: none;
 }
+
+.modal-content{
+	position: relative;
+	width: 80%;
+	background-color: #fafafa;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 1em;
+	margin-top: 45%;
+	box-shadow: 0 0 25px rgba(0,0,0,.5);
+}
+
+.modal-close{
+	position: absolute;
+	top: -15px;
+	right: -10px;
+	cursor: pointer;
+	font-size: 20px;
+	padding-left: 8px;
+	padding-top: 5px;
+	color: #fff;
+	width: 30px;
+	height: 30px;
+	background-color: #4d4d4d;
+	border-radius: 50%;
+}
+.modal--show{
+	display: block !important;
+}
+.copy {
+	margin-top: 10%;
+}
+/*classList.toggle*/

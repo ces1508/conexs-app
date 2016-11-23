@@ -1,0 +1,13 @@
+<ion-header-bar class="bar bar-header login-content">
+	<div style ="width:100%; "ng-include="'templates/partials/menu-bar.html'" ng-controller="NoifiCtrl"></div>
+	<div class="controles">
+		<button class="button button-icon ion-chevron-left button-back" ng-click="back()"></button><span class="controles-title">asistencia</span>
+	</div>
+</ion-header-bar>
+<ion-content style="margin-top:40px;">
+	<ng-if = "data.phone">
+			<div class="call copy" ng-click="copy(data.phone)">
+				<i class="ion-ios-copy-outline"></i>
+			</div>
+	</ng-if>
+</ion-content>

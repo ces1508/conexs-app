@@ -17,17 +17,16 @@
 		<span class="item-1"><strong>E-mail.</strong> <span> {{perfil.e_mail_contac}}</span></span>
 	</div>
 	<div class="segundo_item">
-		
+
 		<span class="display-block">Total de Polizas: <span>{{perfil.num_polizas}}</span></span>
 		<span class="display-block">Polizas Activas: <span>{{perfil.pol_activas}}</span></span>
 		<span class="display-block">Polizas Inactivas: <span>{{perfil.pol_inactivas}}</span></span>
-		
+
 	</div>
 	<div class="tercer_item">
-		<a style="display:block;width:100;"ui-sref="politicas">Políticas de uso y privacidad</a>
-		<button class="button button-clear" ng-click="salir()" style="color: #000;">
+		<a class="button button-clear button-positive button-block" style="text-align: left" href="http://conexseguros.com/images/politicas.pdf" target="_blank">Políticas de uso y privacidad</a>
+		<button class="button button-clear button-positive" ng-click="salir()">
   			Salir
 		</button>
 	</div>
-
 </ion-content>

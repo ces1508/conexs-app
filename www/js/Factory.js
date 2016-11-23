@@ -55,8 +55,8 @@ angular.module('conexs')
 			case "message":
 				if ( e.foreground ){
 					$('.button_2').append('<span class="notification" id="noti"></span>');
+					console.log(e.payload)
 				}else{
-
 					$state.go('notification',{notification_id:e.payload.notification_id});
 				}
 				break;
@@ -110,7 +110,7 @@ angular.module('conexs')
 				 // alert(data.platform + data.uuid +data.name);
 				var req = {
 					method: 'POST',
-					url: 'http://192.168.0.8:80/conexs/saveDeviceInfo.php',
+					url: 'http://api.conexseguros.com/saveDeviceInfo.php',
 					data : data
 				};
 

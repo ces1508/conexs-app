@@ -6,21 +6,20 @@
 </ion-header-bar>
 <ion-content style="margin-top:40px;">
 	<ion-list>
-
 		<div class="list" >
-		<div ng-repeat ="poliza in list" >
-			<a class="item item-avatar" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box; padding-left:10px !important;">
-
+		  <div ng-repeat ="poliza in list" >
+			  <a class="itemc item item-avatar" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box; padding-left:10px !important;">
           <div ng-switch on="poliza.aseguradora" style="display: inline-block" class="item-image lista-imagen">
       		  <img ng-switch-default src="./img/sublogo_1.png" style="max-width:60px;max-height:45px;">
             <img ng-switch-when ="SEGUROS DEL ESTADO S.A." src="./img/seguresDelEstado.png">
             <img ng-switch-when ="SEGUROS MUNDIAL" src="./img/mundial.png">
             <img ng-switch-when ="SEGUROS COMERCIALES BOLIVAR" src="./img/bolivar.jpeg">
-            <img ng-switch-when ="AIG SEGUROS COLOMBIA S.A." src="./img/aig.png">
+            <img ng-switch-when ="AIG SEGUROS COLOMBIA S.A." src="./img/aig.png" >
             <img ng-switch-when ="AIG SEGUROS COLOMBIA S.A" src="./img/aig.png">
             <img ng-switch-when ="ASEGURADORA SOLIDARIA DE COLOMBIA" src="./img/aseguradoraSolidaria.png">
             <img ng-switch-when ="ALLIANZ" src="./img/allianz.png">
             <img ng-switch-when ="EQUIDAD SEGUROS" src="./img/equidadSeguros.png">
+            <!-- <img ng-switch-when ="EQUIDAD SEGUROS " src="./img/equidadSeguros.png"> -->
             <img ng-switch-when ="LIBERTY SEGUROS S.A." src="./img/liberty.png">
             <img ng-switch-when ="MAPFRE" src="./img/mapfre.png">
             <img ng-switch-when ="MAPFRE COLOMBIA" src="./img/mapfre.png">
@@ -50,13 +49,8 @@
       				<p ng-switch-default style="overflow:visible;" >{{poliza.estado}}</p>
             </div>
           </div>
-    	</a>
-		</div>
-
-
+    	  </a>
+		  </div>
     </div>
-
-
-
-</ion-list>
+  </ion-list>
 </ion-content>
