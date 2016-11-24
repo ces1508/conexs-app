@@ -7,9 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "com.phonegap.plugins.PushPlugin": {
-            "PACKAGE_NAME": "com.ionicframework.conexs398441"
-        },
         "com.verso.cordova.clipboard": {
             "PACKAGE_NAME": "com.ionicframework.conexs398441"
         },
@@ -23,6 +20,13 @@
             "PACKAGE_NAME": "com.ionicframework.conexs398441"
         },
         "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.ionicframework.conexs398441"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.conexs398441"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "43898332858",
             "PACKAGE_NAME": "com.ionicframework.conexs398441"
         }
     },

@@ -1,5 +1,5 @@
 angular.module('conexs')
-.controller('LoginCtrl',['$scope','$http','$state','$document',function($scope,$http,$state,$document){
+.controller('LoginCtrl',['$scope','$http','$state','$document','$cordovaToast',function($scope,$http,$state,$document,$cordovaToast){
 	$scope.showModal = function(){
 		var modal = document.getElementById('modal');
 			modal.classList.add('modal--show');
@@ -14,7 +14,6 @@ angular.module('conexs')
 		var req = {
 			method: 'POST',
 			url: 'http://api.conexseguros.com/loginapi.php',
-			//url: 'http://api.conexseguros.com/loginapi.php',
 			data: {
 				cedula: $scope.user.cedula
 			}
@@ -22,14 +21,14 @@ angular.module('conexs')
 
 		$http(req).then(function(response){
 			if(response.data.error){
-				alert('Por favor verifique sus datos');
+				 $cordovaToast.showShortCenter('usuario no encontrado, por favor verifique sus datos');
 			}
 			if(response.data.ok){
 				window.localStorage['user'] = $scope.user.cedula;
 				$state.go('polizas',{},{reload: true});
 			}
 		},function(error){
-			alert('error :' +  error.data);
+			$cordovaToast.showShortBottom('lo sentimos, tenemos problemas con nuestros servidores');
 		});
 	};
 }]);

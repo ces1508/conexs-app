@@ -2,7 +2,7 @@ angular.module('conexs')
 .factory('pushNotifications',['$http','$state','$cordovaDevice',function($http,$state,$cordovaDevice) {
 	var pushNotifications;
 	document.addEventListener('deviceready',function(){
-		pushNotifications = window.plugins.pushNotification;
+		//pushNotifications = window.plugins.pushNotification;
 	});
 	var user;
 
@@ -118,8 +118,6 @@ angular.module('conexs')
 					if(response.data.ok){
 						console.log('all ok');
 						// alert('sendeviceinfo');
-					}else{
-						alert('response  error :'+  response.data.ok);
 					}
 				},function(error){
 					// alert('error : '+ error);

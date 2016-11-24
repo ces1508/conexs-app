@@ -74,7 +74,7 @@ angular.module('conexs')
     };
   }
   function toast (text) {
-    $cordovaToast.showLongBottom(text).then(function(success) {});
+    $cordovaToast.showShortCenter(text).then(function(success) {});
   }
   $scope.copy = function (number) {
   $cordovaClipboard
