@@ -1,5 +1,5 @@
 angular.module('conexs')
-.factory('pushNotifications',['$http','$state','$cordovaDevice',function($http,$state,$cordovaDevice) {
+.factory('pushNotifications',['$http','$state','$cordovaDevice','$cordovaToast',function($http,$state,$cordovaDevice,$cordovaToast) {
 	var pushNotifications;
 	document.addEventListener('deviceready',function(){
 		//pushNotifications = window.plugins.pushNotification;
@@ -113,13 +113,14 @@ angular.module('conexs')
 					url: 'http://api.conexseguros.com/saveDeviceInfo.php',
 					data : data
 				};
-
+				console.log('make request', data)
 				$http(req).then(function(response){
 					if(response.data.ok){
 						console.log('all ok');
 						// alert('sendeviceinfo');
 					}
 				},function(error){
+					$cordovaToast.showShortBottom(`oocurrió un error: ${error}`)
 					// alert('error : '+ error);
 				});
 			}

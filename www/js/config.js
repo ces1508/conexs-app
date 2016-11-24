@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('conexs')
 
-.run(function($ionicPlatform,pushNotifications,$cordovaDevice) {
+.run(function($ionicPlatform,pushNotifications,$cordovaDevice,$state) {
   document.addEventListener('deviceready',function(){
     //pushNotifications.register();
   });
@@ -18,11 +18,16 @@ angular.module('conexs')
       },
       "ios": {"alert": "true", "bagde": "true","sound": "true"}})
       push.on('registration', function (data) {
+        console.log(data)
         if(!window.localStorage['regid']) {
           window.localStorage['regid'] = data.registrationId
         }
+        if (window.localStorage['user']) {
+          pushNotifications.sendDeviceInfo(window.localStorage['user'])
+        }
       })
       push.on('notification', function (data) {
+        console.log(data)
         if (data.additionalData.foreground) {
           $('.button_2').append('<span class="notification" id="noti"></span>');
         } else {
