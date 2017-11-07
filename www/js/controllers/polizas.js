@@ -16,7 +16,6 @@ angular.module('conexs')
 		});
 		if(window.localStorage['regid']){
 			pushNotifications.sendDeviceInfo(window.localStorage['user']);
-
 		}
 	};
 

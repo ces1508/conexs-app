@@ -1,3 +1,4 @@
+
 angular.module('conexs')
 .controller('ListSiniestrosCtrl',['$scope','$stateParams','$http','$state','$ionicHistory',function($scope,$stateParams,$http,$state,$ionicHistory){
   if (!window.localStorage['user']) {
@@ -14,8 +15,7 @@ angular.module('conexs')
   };
 
   $http(req).then(function(response){
-   $scope.lista = response.data;
-
+    $scope.lista = response.data
   },function(err){
   })
 }]);

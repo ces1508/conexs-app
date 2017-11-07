@@ -25,13 +25,13 @@
       <div class="item item-text-wrap">
         <p><b>fecha°:</b> {{siniestro.fecha_acci}}</p>
         <p><b>causa :</b> {{siniestro.causa}}</p>
-
         <p><b>Heridos:</b> {{siniestro.heridos}}</p>
         <p><b>Daños Materiales:</b> {{siniestro.danios}} </p>
         <p><b>estado : </b>{{siniestro.estado}}</p>
         <p><b>Muertos:</b> {{siniestro.muertos}}</p>
         <p><b>Fotos:</b> {{siniestro.fotos}} </p>
-        <p><b>observaciones :</b>{{siniestro.observaciones}}</p>
+        <p><b>observaciones :</b></p>
+          <p ng-bind-html="siniestro.observaciones" ></p>
     </div>
     </div>
   </section>

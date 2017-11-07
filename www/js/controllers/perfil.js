@@ -13,8 +13,7 @@ angular.module('conexs')
 				}
 			};
 			$http(req).then(function(response){
-				prueba = response.data;
-				$scope.perfil = response.data[0];
+				$scope.perfil = response.data[0]
 				$scope.perfil.num_polizas = response.data.length;
 				$scope.perfil.pol_activas = 0;
 				$scope.perfil.pol_inactivas= 0;

@@ -11,7 +11,8 @@ angular.module('conexs')
 	  url:'http://api.conexseguros.com/api-poliza.php?poliza='+$stateParams.poliza_id,
 	};
 		$http(req).then(function(response){
-	  	$scope.informacion = response.data[0];
+      $scope.informacion = response.data[0];
+      $scope.informacion.image = GetImageByCompany($scope.informacion.aseguradora)
       $scope.informacion.contenido = true
 			getNumber($scope.informacion.aseguradora)
 		},function(error){
