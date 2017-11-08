@@ -18,4 +18,5 @@ angular.module('conexs')
     $scope.lista = response.data
   },function(err){
   })
+
 }]);

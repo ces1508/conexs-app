@@ -9,7 +9,7 @@
 		<section class="layout-info-poliza">
 			<div class="logo-aseguradora" ng-switch on="informacion.aseguradora">
 				<div class="img-aseguradora">
-					<img ng-src="{{ informacion.image }}">
+					<img ng-src="{{ informacion.image }}"  style = 'max-width: 70px;'>
 				</div>
 				<p ng-hide="informacion.contenido">Aún no tienes ninguna notificación :/</p>
 				<div ng-switch on ="informacion.estado" class="estado-poliza">

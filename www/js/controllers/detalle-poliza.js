@@ -5,7 +5,8 @@ angular.module('conexs')
 	}
   $scope.informacion = {};
   $scope.informacion.contenido = false
-	$scope.numSiniestros = 'cargando';
+  $scope.numSiniestros = 'cargando';
+  console.log($stateParams.poliza_id)
 	var req = {
 	  method:'get',
 	  url:'http://api.conexseguros.com/api-poliza.php?poliza='+$stateParams.poliza_id,

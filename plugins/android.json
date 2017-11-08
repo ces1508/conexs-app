@@ -21,13 +21,6 @@
         },
         "cordova-plugin-x-toast": {
             "PACKAGE_NAME": "com.ionicframework.conexs398441"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.conexs398441"
-        },
-        "phonegap-plugin-push": {
-            "SENDER_ID": "43898332858",
-            "PACKAGE_NAME": "com.ionicframework.conexs398441"
         }
     },
     "dependent_plugins": {}

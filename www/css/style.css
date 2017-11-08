@@ -183,8 +183,8 @@ a{
 .img-aseguradora >img{
 	min-height: 35px;
 	max-height: 45px;
-	min-width: 100px;
-
+	min-width: 50px;
+	margin-right: 25px;
 }
 .estado-poliza{
 	width: 47%;

@@ -10,7 +10,8 @@ angular.module('conexs')
 			}
 		};
 		$http(req).then(function(response){
-			$scope.list = response.data;
+			var list = response.data;
+			$scope.order(list)
 		},function(error){
 
 		});
@@ -18,7 +19,19 @@ angular.module('conexs')
 			pushNotifications.sendDeviceInfo(window.localStorage['user']);
 		}
 	};
-
+	$scope.order = function (list) {
+		$scope.soats = list.filter(function (item) {
+			if (item.formato === 'SOAT')
+			return item
+		})
+		$scope.polizas = list.filter(function (item) {
+			if (item.formato !== 'SOAT')
+			return item
+		})
+	}
+	$scope.getImage = function (company) {
+    return GetImageByCompany(company)
+  }
 	$scope.init();
 
 }]);
