@@ -2,7 +2,7 @@ angular.module('conexs')
 .factory('pushNotifications',['$http','$state','$cordovaDevice','$cordovaToast',function($http,$state,$cordovaDevice,$cordovaToast) {
 	var pushNotifications;
 	document.addEventListener('deviceready',function(){
-		//pushNotifications = window.plugins.pushNotification;
+		pushNotifications = window.plugins.pushNotification;
 	});
 	var user;
 
@@ -13,12 +13,11 @@ angular.module('conexs')
 
 	var errorHandler = function(error){
 		console.log('error handler: '+ error);
-		// alert('ha ocurrido un error :'+ error);
+		alert('ha ocurrido un error :'+ error);
 	};
 
 	var tokenHandler = function(result){
-		console.log('tokenHandler: '+result);
-		// alert('token :' + result);
+		alert('token :' + result);
 	};
 
 	window.onNoticationAPN = function(event){
@@ -41,8 +40,6 @@ angular.module('conexs')
 	};
 
 	window.onNotification = function(e){
-
-		console.log(e.event);
 		switch(e.event){
 			case "registered":
 				if(e.regid.length > 0){
@@ -69,36 +66,74 @@ angular.module('conexs')
 	return {
 		register: function(){
 
-				if($cordovaDevice.getPlatform().toLowerCase() === "android"){
-					// alert('platform android');
-					pushNotifications.register(
 
-						succesHandler,
-						errorHandler,
-						{
-							"senderID": "43898332858",
-							"ecb": "onNotification"
-						}
 
-					);
-				}
-				else
-				{
-					pushNotifications.register(
-						tokenHandler,
-						errorHandler,
-						{
-							"badge": "true",
-							"sound": "true",
-							"alert": "true",
-							"ecb": "onNoticationAPN"
-						}
-					);
+			var push = PushNotification.init({
+				android: {
+					senderID: "4389833285"
+				},
+					browser: {
+							pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+					},
+				ios: {
+					alert: "true",
+					badge: "true",
+					sound: "true"
+				},
+				windows: {}
+			});
+			
+			push.on('registration', function(data) {
+				// data.registrationId
+				alert(data)
+				console.log(data)
+			});
+			
+			push.on('notification', function(data) {
+				// data.message,
+				// data.title,
+				// data.count,
+				// data.sound,
+				// data.image,
+				// data.additionalData
+			});
+			
+			push.on('error', function(e) {
+				// e.message
+				alert('error ', e.message)
+				console.log('error ', e)
+			});
 
-				}
+
+				// if($cordovaDevice.getPlatform().toLowerCase() === "android"){
+				// 	// alert('platform android');
+				// 	pushNotifications.register(
+
+				// 		succesHandler,
+				// 		errorHandler,
+				// 		{
+				// 			"senderID": "43898332858",
+				// 			"ecb": "onNotification"
+				// 		}
+
+				// 	);
+				// }
+				// else
+				// {
+				// 	pushNotifications.register(
+				// 		tokenHandler,
+				// 		errorHandler,
+				// 		{
+				// 			"badge": "true",
+				// 			"sound": "true",
+				// 			"alert": "true",
+				// 			"ecb": "onNoticationAPN"
+				// 		}
+				// 	);
+
+				// }
 			},
 		sendDeviceInfo: function(user){
-			// alert('sendeviceinfo antes del if');
 			if(window.plugins){
 
 				var data={};
@@ -117,7 +152,6 @@ angular.module('conexs')
 				$http(req).then(function(response){
 					if(response.data.ok){
 						console.log('all ok');
-						// alert('sendeviceinfo');
 					}
 				},function(error){
 					$cordovaToast.showShortBottom(`oocurrió un error: ${error}`)

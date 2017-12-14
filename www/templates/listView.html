@@ -1,17 +1,13 @@
 <ion-header-bar class="bar-header bar login-content header-big">
  <div style ="width:100%; "ng-include="'templates/partials/menu-bar.html'" ng-controller="NoifiCtrl"></div>
 </ion-header-bar>
-<ionic-content>
-  <ion-tabs class="tabs-positive tabs-icon-left" >
-    <ion-tab title="Mis Polizas" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
-      <ion-content style = 'margin-top: 40px'>
-          <ion-list>
-            <div class="list" >
+  <ion-tabs class="tabs-positive tabs-icon-left has-header" >
+    <ion-tab title="Mis Pólizas" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
+      <ion-scroll>
+          <div class="list has-header" style="margin-bottom: 50px;">
               <div ng-repeat ="poliza in polizas" >
-                <a class="itemc item item-avatar" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box; padding-left:10px !important;">
-                  <div ng-switch on="poliza.aseguradora" style="display: inline-block" class="item-image lista-imagen">
-                    <img  ng-src="{{ getImage(poliza.aseguradora) }}" class="lista-imagen">
-                  </div >
+                <a class="item " href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box; padding-left:10px !important;">
+                    <img  ng-src="{{ getImage(poliza.aseguradora) }}" class = "lista-imagen">
                   <div class="list-text">
                     <h2 class="">{{poliza.tipo_poliza}}</h2>
                       <div ng-switch on="poliza.tipo_poliza">
@@ -34,18 +30,14 @@
                 </a>
               </div>
             </div>
-          </ion-list>
-        </ion-content>
+      </ion-scroll>
     </ion-tab>
     <ion-tab title="Mis Soats" icon-on="ion-model-s" icon-off="ion-model-s">
-        <ion-content style = 'margin-top: 40px'>
-            <ion-list>
-              <div class="list" >
+        <ion-scroll style="margin-bottom:60px,">
+              <div class="list has-header" style="margin-bottom: 50px;">
                 <div ng-repeat ="poliza in soats" >
-                  <a class="itemc item item-avatar" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box; padding-left:10px !important;">
-                    <div ng-switch on="poliza.aseguradora" style="display: inline-block" class="item-image lista-imagen">
+                  <a class="item" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box; padding-left:10px !important;">
                       <img  ng-src="{{ getImage(poliza.aseguradora) }}" class="lista-imagen">
-                    </div >
                     <div class="list-text">
                       <h2 class="">{{poliza.tipo_poliza}}</h2>
                         <div ng-switch on="poliza.tipo_poliza">
@@ -68,10 +60,7 @@
                   </a>
                 </div>
               </div>
-            </ion-list>
-          </ion-content>
+        </ion-scroll>
     </ion-tab>
   </ion-tabs>
-
-</ionic-content>
 

@@ -9,10 +9,8 @@
   <div class="list">
   <div ng-show="contenido">
     <div ng-repeat="notification in notifications" class="">
-      <a class="item item-icon-right item-avatar" style="box-sizing: border-box; padding-left:10px !important;"  href="#/notification/{{notification.id}}">
-        <div class="item-image lista-imagen" style="display: inline-block; width:11% !important;">
-				  <img src="./img/sublogo_1.png" alt=""  style = "width: 50px;">
-        </div>
+      <a class="item" style="box-sizing: border-box; padding-left:10px !important;"  href="#/notification/{{notification.id}}">
+				  <img src="./img/sublogo_1.png" alt="" style = "height:50px; width:50px; margin-right:5px;" > 
         <div class="list-text">
           <p class="notifications-title">{{notification.titulo}}</p>
         </div>

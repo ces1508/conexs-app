@@ -12,6 +12,7 @@ angular.module('conexs')
 		$http(req).then(function(response){
 			var list = response.data;
 			$scope.order(list)
+			console.log($scope.polizas)
 		},function(error){
 
 		});

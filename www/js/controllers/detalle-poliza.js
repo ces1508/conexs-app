@@ -13,6 +13,7 @@ angular.module('conexs')
 	};
 		$http(req).then(function(response){
       $scope.informacion = response.data[0];
+      console.log($scope.informacion)
       $scope.informacion.image = GetImageByCompany($scope.informacion.aseguradora)
       $scope.informacion.contenido = true
 			getNumber($scope.informacion.aseguradora)
@@ -30,61 +31,68 @@ angular.module('conexs')
 	function getNumber(aseguradora){
     switch (aseguradora) {
       case 'AIG SEGUROS COLOMBIA S.A':
-        $scope.informacion.phone = '#360';
+        $scope.informacion.phone = '%23360';
         break;
         case 'AIG SEGUROS COLOMBIA S.A.':
-        $scope.informacion.phone = '#360';
+        $scope.informacion.phone = '%23360';
+        break;
+      case 'SBS SEGUROS COLOMBIA S.A.':
+        $scope.informacion.phone = '%23360';
         break;
       case 'EQUIDAD SEGUROS':
-        $scope.informacion.phone = '#324';
+        $scope.informacion.phone = '%23324';
         break;
       case 'EQUIDAD SEGUROS ':
-        $scope.informacion.phone = '#324';
+        $scope.informacion.phone = '%23324';
         break
       case 'SEGUROS DEL ESTADO S.A.':
-        $scope.informacion.phone = '#388';
+        $scope.informacion.phone = '%23388';
         break;
-        case 'ALLIANZ':
-          $scope.informacion.phone ='#265'
-          break;
-        case 'SEGUROS MUNDIAL':
-          $scope.informacion.phone = false
-          break;
-        case 'PREVISORA SEGUROS':
-
-          break
-        case 'LA PREVISORA S.A.':
-          $scope.informacion.phone = '#345';
-          break
-        case 'ASEGURADORA SOLIDARIA DE COLOMBIA':
-          $scope.informacion.phone= '#789';
-          break;
-        case 'MAPFRE SEGUROS COLOMBIA':
-          $scope.informacion.phone = '#624';
-          break;
-        case 'MAPFRE COLOMBIA':
-          $scope.informacion.phone = '#624';
-          break;
-        case 'LIBERTY SEGUROS S.A.':
-          $scope.informacion.phone = '#224';
-          break;
-        case 'ASEGURADORA SOLIDARIA DE SEGUROS':
-          break;
-        case 'AXA COLPATRIA SEGUROS S.A.':
-          $scope.informacion.phone = '#247'
-          break;
-        case 'COLPATRIA SEGUROS':
-          $scope.informacion.phone = '#247'
-          break;
-        case 'ROYAL & SUN ALLIANCE SEGUROS (COLOMBIA) S.A.S.':
-          $scope.informacion.phone = false
-          break;
-        case 'CONFIANZA':
-          $scope.informacion.phone = false;
-          break
-        case 'QBE SEGUROS':
-          $scope.informacion.phone = '#723'
-          break
+      case 'ALLIANZ':
+        $scope.informacion.phone ='%23265'
+        break;
+      case 'SEGUROS MUNDIAL':
+        $scope.informacion.phone = '018000515522'
+        break;
+      case 'PREVISORA SEGUROS':
+        $scope.informacion.phone = '%23345';
+        break
+      case 'LA PREVISORA S.A.':
+        $scope.informacion.phone = '%23345';
+        break
+      case 'ASEGURADORA SOLIDARIA DE COLOMBIA':
+        $scope.informacion.phone= '%23789';
+        break;
+      case 'MAPFRE SEGUROS COLOMBIA':
+        $scope.informacion.phone = '%23624';
+        break;
+      case 'MAPFRE COLOMBIA':
+        $scope.informacion.phone = '%23624';
+        break;
+      case 'LIBERTY SEGUROS S.A.':
+        $scope.informacion.phone = '%23224';
+        break;
+      case 'ASEGURADORA SOLIDARIA DE SEGUROS':
+        $scope.informacion.phone= '%23789';
+        break;
+      case 'AXA COLPATRIA SEGUROS S.A.':
+        $scope.informacion.phone = '%23247'
+        break;
+      case 'COLPATRIA SEGUROS':
+        $scope.informacion.phone = '%23247'
+        break;
+      case 'ROYAL & SUN ALLIANCE SEGUROS (COLOMBIA) S.A.S.':
+        $scope.informacion.phone = false
+        break;
+      case 'CONFIANZA':
+        $scope.informacion.phone = '0316444690';
+        break
+      case 'QBE SEGUROS':
+        $scope.informacion.phone = '%23723'
+        break
+        case 'SURA':
+          $scope.informacion.phone = '%23888'
+        break
       default:
     };
   }
@@ -104,7 +112,8 @@ angular.module('conexs')
 	}
 
 	$scope.sendMail = function(){
-		$scope.copy($scope.informacion.phone);
+    // $scope.copy($scope.informacion.phone);
+    var call = "tel:" + $scope.informacion.phone;
 	  var req= {
 	    url : 'http://api.conexseguros.com/send-mail.php',
 	    method: 'POST',
@@ -112,12 +121,13 @@ angular.module('conexs')
 				username: $scope.informacion.titular,
 	      cedula: $scope.informacion.cedula_nit,
 	      poliza: $scope.informacion.poliza
-	    }
+      }
 	  };
-
+    
 	  $http(req).then(function(response){
-	  },function(error){
-	  });
+    },function(error){
+    });
+    document.location.href = call
 	};
 
 	$scope.goPolizas = function(){

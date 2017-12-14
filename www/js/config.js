@@ -4,21 +4,49 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('conexs')
-
 .run(function($ionicPlatform,pushNotifications,$cordovaDevice,$state) {
   document.addEventListener('deviceready',function(){
-    //pushNotifications.register();
+    // pushNotifications.register();
   });
   $ionicPlatform.ready(function() {
-    var push =  window.PushNotification.init({
-      "android":{
+
+
+  //   var notificationOpenedCallback = function(jsonData) {
+  //     alert("Notification opened:\n" + JSON.stringify(jsonData));
+  //     console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+  //   };
+
+  //   // TODO: Update with your OneSignal AppId before running.
+  //   window.plugins.OneSignal
+  //     .startInit('d0f77724-5882-417f-bbee-e3944ba3f5c4')
+  //     .handleNotificationOpened(notificationOpenedCallback)
+  //     .endInit();
+  // });
+
+
+
+
+    var push =  PushNotification.init({
+      
+      android:{
         "senderID": "43898332858",
         "icon": "icon.png",
-        "iconColor": "#F3F781"
+        "iconColor": "#F3F781",
+        "sound": "true"
       },
-      "ios": {"alert": "true", "bagde": "true","sound": "true"}})
+      ios: {
+        alert:true,
+        bagde: true,
+        sound:  "true",
+        clearBadge: "true",
+        senderID: "43898332858",
+        gcmSandbox: "true", 
+        // fcmSandbox: "false"
+      }})
+      
       push.on('registration', function (data) {
-        console.log(data)
+        console.log('registrado', data.registrationId)
+        // alert(data.registrationId)
         if(!window.localStorage['regid']) {
           window.localStorage['regid'] = data.registrationId
         }
@@ -26,8 +54,10 @@ angular.module('conexs')
           pushNotifications.sendDeviceInfo(window.localStorage['user'])
         }
       })
+
       push.on('notification', function (data) {
-        console.log(data)
+
+        console.log('llego notification', data)
         if (data.additionalData.foreground) {
           $('.button_2').append('<span class="notification" id="noti"></span>');
         } else {
@@ -35,7 +65,8 @@ angular.module('conexs')
         }
       })
       push.on('error', function (err) {
-        console.log(err)
+        alert('error ', err)
+        console.log('el error es ', err)
       })
       if(window.cordova && window.cordova.plugins.Keyboard) {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
