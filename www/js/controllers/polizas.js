@@ -1,18 +1,26 @@
 angular.module('conexs')
 .controller('PolizasCtrl',['$scope','$state','$http','pushNotifications',function($scope,$state,$http,pushNotifications){
+	$scope.showOnlyWthiSiniestros = true
 	$scope.init = function(){
 		$scope.list = {};
+		var params = {}
+		var url = 'http://api.conexseguros.com/list-polizas.php'
+		if ($scope.showOnlyWthiSiniestros) {
+			params = {
+				siniestros: true
+			}
+		}
 		var req = {
 			url: 'http://api.conexseguros.com/list-polizas.php',
 			method: 'POST',
 			data: {
 				user: window.localStorage['user']
-			}
+			},
+			params
 		};
 		$http(req).then(function(response){
 			var list = response.data;
 			$scope.order(list)
-			console.log($scope.polizas)
 		},function(error){
 
 		});
@@ -32,7 +40,11 @@ angular.module('conexs')
 	}
 	$scope.getImage = function (company) {
     return GetImageByCompany(company)
-  }
+	}
+	$scope.changeInput = function () {
+		$scope.showOnlyWthiSiniestros = !$scope.showOnlyWthiSiniestros
+		$scope.init()
+	}
 	$scope.init();
 
 }]);

@@ -1,10 +1,19 @@
 <ion-header-bar class="bar-header bar login-content header-big">
  <div style ="width:100%; "ng-include="'templates/partials/menu-bar.html'" ng-controller="NoifiCtrl"></div>
 </ion-header-bar>
-  <ion-tabs class="tabs-positive tabs-icon-left has-header" >
+<ion-tabs class="tabs-positive tabs-icon-left has-header" >
     <ion-tab title="Mis Pólizas" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
       <ion-scroll>
           <div class="list has-header" style="margin-bottom: 50px;">
+              <div class="item item-toggle">
+                  mostrar solo polizas con siniestros
+                  <label class="toggle toggle-assertive">
+                    <input type="checkbox" ng-model="showOnlyWthiSiniestros" ng-change="changeInput()">
+                    <div class="track">
+                      <div class="handle"></div>
+                    </div>
+                  </label>
+                </div>
               <div ng-repeat ="poliza in polizas" >
                 <a class="item " href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box; padding-left:10px !important;">
                     <img  ng-src="{{ getImage(poliza.aseguradora) }}" class = "lista-imagen">
@@ -20,6 +29,7 @@
                         <div ng-switch-default>
                           <p ng-if="poliza.placas != 'N/A'">Placa: {{poliza.placas}}</p>
                         </div>
+                        <p> Poliza:  {{poliza.poliza}} </p>
                       </div>
                     <div ng-switch on ="poliza.estado" class="estado" >
                       <p ng-switch-when="ACTIVO" style="color:Green;overflow:visible;"> {{poliza.estado}}</p>
@@ -50,6 +60,7 @@
                           <div ng-switch-default>
                             <p ng-if="poliza.placas != 'N/A'">Placa: {{poliza.placas}}</p>
                           </div>
+                          <p> Poliza:  {{poliza.poliza}} </p>
                         </div>
                       <div ng-switch on ="poliza.estado" class="estado" >
                         <p ng-switch-when="ACTIVO" style="color:Green;overflow:visible;"> {{poliza.estado}}</p>

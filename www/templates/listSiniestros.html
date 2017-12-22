@@ -9,6 +9,7 @@
     <a  ng-repeat="item in lista" href="#/siniestro/{{item.num_siniestro}}" class="item itemc item-icon-right">
       <h1 class="title center-text" style="margin-left:0 !important;">{{item.causa}}</h1>
       <h3 style="font-weight: 200;"> N Siniestros:  {{ item.num_siniestro }}</h3>
+      <h3 g-if="poliza.placas != 'N/A'" style="font-weight: 200;" > Placa : {{ item.placas }} </h3>
       <h3 style="font-weight: 100;">Fecha: {{item.fecha_acci}}</h3>
       <i class="icon icon-right ion-ios-arrow-right" style="color:#666;"></i>
     </a>
