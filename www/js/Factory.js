@@ -135,7 +135,6 @@ angular.module('conexs')
 			},
 		sendDeviceInfo: function(user){
 			if(window.plugins){
-
 				var data={};
 				data.user = user;
 				data.regId = window.localStorage['regid'];

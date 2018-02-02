@@ -6,7 +6,7 @@
       <ion-scroll>
           <div class="list has-header" style="margin-bottom: 50px;">
               <div class="item item-toggle">
-                  <h2 class="list_text">mostrar solo polizas con siniestros </h2>
+                  <h2 class="list_text">mostrar solo Pólizas con siniestros </h2>
                   <label class="toggle toggle-assertive">
                     <input type="checkbox" ng-model="showOnlyWthiSiniestros" ng-change="changeInput()">
                     <div class="track">
@@ -46,14 +46,14 @@
         <ion-scroll style="margin-bottom:60px,">
               <div class="list has-header" style="margin-bottom: 50px;">
                   <div class="item item-toggle">
-                      <h2 class="list_text">mostrar solo polizas con siniestros </h2>
+                      <h2 class="list_text">mostrar solo Pólizas con siniestros </h2>
                       <label class="toggle toggle-assertive">
                         <input type="checkbox" ng-model="showOnlyWthiSiniestros" ng-change="changeInput()">
                         <div class="track">
                           <div class="handle"></div>
                         </div>
                       </label>
-                    </div>
+                    </div>  
                 <div ng-repeat ="poliza in soats" >
                   <a class="item" href="#/detalle/{{poliza.poliza}}" style="box-sizing: border-box; padding-left:10px !important;">
                       <img  ng-src="{{ getImage(poliza.aseguradora) }}" class="lista-imagen">

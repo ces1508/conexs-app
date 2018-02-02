@@ -5,29 +5,47 @@ angular.module('conexs')
 			modal.classList.add('modal--show');
 
 	}
+	var reg = new RegExp('^[a-zA-Z]{3}[0-9]{2}[a-zA-Z0-9]?$')
+
 	$scope.hiddeModal= function(){
 		var modal = document.getElementById('modal');
 			modal.classList.remove('modal--show');
 	}
-	$scope.user ={};
+
+	$scope.auth  = 'cedula'
+	$scope.user ={}
 	$scope.login = function(){
+		var inputData = String($scope.user.cedula).split(' ')
+		if (inputData.length < 2) {
+			$cordovaToast.showShortCenter('debes ingresar tu codigo de seguridad.');
+			return null
+		}
+		if (inputData[0] !== inputData[1]) {
+			return $cordovaToast.showShortCenter('Por favor, verifique sus datos.');
+		}
+		var txt = inputData[0]
+		if (txt.match(reg)) {
+			$scope.auth = 'placa'
+		}
 		var req = {
 			method: 'POST',
 			url: 'http://api.conexseguros.com/loginapi.php',
 			data: {
-				cedula: $scope.user.cedula
-			}
+				cedula: parseInt(inputData[0]),
+				placa: inputData[0]
+			},
+			params: {
+				auth: $scope.auth
+			},
 		};
-
 		$http(req).then(function(response){
 			if(response.data.error){
-				 $cordovaToast.showShortCenter('usuario no encontrado, por favor verifique sus datos');
+				 return $cordovaToast.showShortCenter('usuario no encontrado, por favor verifique sus datos');
 			}
-			if(response.data.ok){
-				window.localStorage['user'] = $scope.user.cedula;
-				$state.go('polizas',{},{reload: true});
-			}
+			window.localStorage['user']= response.data.user? response.data.user: inputData[0];
+			$state.go('polizas',{},{reload: true});
 		},function(error){
+			console.log('error ', error.message)
 			$cordovaToast.showShortBottom('lo sentimos, tenemos problemas con nuestros servidores');
 		});
 	};

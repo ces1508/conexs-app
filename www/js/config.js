@@ -40,7 +40,7 @@ angular.module('conexs')
         sound:  "true",
         clearBadge: "true",
         senderID: "43898332858",
-        gcmSandbox: "true", 
+        gcmSandbox: "false", 
         // fcmSandbox: "false"
       }})
       

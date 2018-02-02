@@ -74,7 +74,11 @@ a{
 	margin:0 auto;
 	border-bottom: 1px solid #001959;
 }
-
+#cedula {
+	width: 90%;
+	margin: 0 auto;
+	border-bottom: 1px solid #001959;
+}
 .text-white{
 	color: #fff;
 }
