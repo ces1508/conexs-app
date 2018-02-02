@@ -1,4 +1,5 @@
 const GetImageByCompany = function (company) {
+  var company = company.trim()
   switch (company) {
     case 'SEGUROS DEL ESTADO S.A.':
       return './img/seguresDelEstado.png'

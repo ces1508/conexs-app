@@ -10,24 +10,8 @@ angular.module('conexs')
   });
   $ionicPlatform.ready(function() {
 
-
-  //   var notificationOpenedCallback = function(jsonData) {
-  //     alert("Notification opened:\n" + JSON.stringify(jsonData));
-  //     console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-  //   };
-
-  //   // TODO: Update with your OneSignal AppId before running.
-  //   window.plugins.OneSignal
-  //     .startInit('d0f77724-5882-417f-bbee-e3944ba3f5c4')
-  //     .handleNotificationOpened(notificationOpenedCallback)
-  //     .endInit();
-  // });
-
-
-
-
     var push =  PushNotification.init({
-      
+
       android:{
         "senderID": "43898332858",
         "icon": "icon.png",
@@ -40,13 +24,11 @@ angular.module('conexs')
         sound:  "true",
         clearBadge: "true",
         senderID: "43898332858",
-        gcmSandbox: "false", 
-        // fcmSandbox: "false"
+        gcmSandbox: "false",
       }})
-      
+
       push.on('registration', function (data) {
-        console.log('registrado', data.registrationId)
-        // alert(data.registrationId)
+        alert('registration', data.registrationId)
         if(!window.localStorage['regid']) {
           window.localStorage['regid'] = data.registrationId
         }
@@ -56,9 +38,9 @@ angular.module('conexs')
       })
 
       push.on('notification', function (data) {
-
-        console.log('llego notification', data)
-        if (data.additionalData.foreground) {
+        alert(data)
+        console.log('llego notification', JSON.stringify(data))
+        if (data.additionalData.coldstart || data.additionalData.foreground) {
           $('.button_2').append('<span class="notification" id="noti"></span>');
         } else {
           $state.go('notification',{notification_id:data.additionalData.notification_id});
