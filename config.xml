@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.conexseguros.app" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.conexseguros.app" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>conexs</name>
     <description>
     </description>
     <author email="ces1508@gmail.com" />
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.1.53:8100" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <allow-intent href="http://*/*" />
@@ -72,8 +72,6 @@
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     </platform>
     <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
-    <engine name="android" spec="^6.2.3" />
-    <engine name="ios" spec="^4.4.0" />
     <plugin name="cordova-plugin-console" spec="^1.1.0" />
     <plugin name="cordova-plugin-device" spec="~1.1.2" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.1.0" />
@@ -83,4 +81,7 @@
     <plugin name="phonegap-plugin-push" spec="git+https://github.com/phonegap/phonegap-plugin-push.git#1.6.0">
         <variable name="SENDER_ID" value="43898332858" />
     </plugin>
+    <allow-navigation href="http://192.168.1.53:8100" sessionid="e8144014" />
+    <engine name="android" spec="^6.2.3" />
+    <engine name="ios" spec="^4.4.0" />
 </widget>

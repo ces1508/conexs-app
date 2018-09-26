@@ -1,6 +1,6 @@
 var prueba;
 angular.module('conexs')
-.controller('PerfilCtrl',['$scope','$http','$state',function($scope,$http,$state){
+.controller('PerfilCtrl', ['$scope', '$http', '$state', function($scope, $http, $state){
 	if (!window.localStorage['user']) {
 		$state.go('login')
 	} else  {

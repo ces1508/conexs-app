@@ -1,8 +1,8 @@
 <ion-header-bar class="header header-bar login-content header-big">
     <div style ="width:100%; "ng-include="'templates/partials/menu-bar.html'" ng-controller="NoifiCtrl"></div>
     <div class="controles">
-    <button class="button button-icon ion-chevron-left button-back" ui-sref="polizas" ></button>
-    <span class="controles-title">Notificaciones</span>
+      <button class="button button-icon ion-chevron-left button-back" ui-sref="polizas" ></button>
+      <span class="controles-title">Notificaciones</span>
   </div>
 </ion-header-bar>
 <ion-content style="margin-top:40px;">
@@ -10,7 +10,7 @@
   <div ng-show="contenido">
     <div ng-repeat="notification in notifications" class="">
       <a class="item" style="box-sizing: border-box; padding-left:10px !important;"  href="#/notification/{{notification.id}}">
-				  <img src="./img/sublogo_1.png" alt="" style = "height:50px; width:50px; margin-right:5px;" > 
+				  <img src="./img/sublogo_1.png" alt="" style = "height:50px; width:50px; margin-right:5px;" >
         <div class="list-text">
           <p class="notifications-title">{{notification.titulo}}</p>
         </div>

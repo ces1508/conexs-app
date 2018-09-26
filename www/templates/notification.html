@@ -12,7 +12,7 @@
 		<h2 id="notification-title">{{notification.titulo}}</h2>
 	</div>
 	<div class="notification-body">
-		<p>{{notification.body}}</p>
+		<p ng-bind-html="notification.body"></p>
 		<div ng-if="notification.url != '' && notification.link_nombre != ''">
 			 <a href="{{notification.url}}">
 				{{notification.link_nombre}}</a>
