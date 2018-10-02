@@ -23,21 +23,21 @@ angular.module('conexs')
         }
       })
       push.on('registration', function (data) {
-        if (window.localStorage['regid']) {
-          window.localStorage['regid'] = data.registrationId
+        console.log(data)
+        if (!window.localStorage.getItem('regid')) {
+          window.localStorage.setItem('regid', data.registrationId)
           pushNotifications.sendDeviceInfo()
         }
-        if (window.localStorage['user']) {
-          pushNotifications.sendDeviceInfo(window.localStorage['user'])
+        if (window.localStorage.getItem('user')) {
+          pushNotifications.sendDeviceInfo(window.localStorage.getItem('user'))
         }
       })
 
       push.on('notification', function (data) {
-        console.log(data)
         if (data.additionalData.foreground) {
           $('.button_2').append('<span class="notification" id="noti"></span>')
         } else {
-          $state.go('notification', {notification_id: data.additionalData.notification_id})
+          $state.go('notification', { notification_id: data.additionalData.notification_id })
         }
       })
       if (window.cordova && window.cordova.plugins.Keyboard) {

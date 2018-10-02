@@ -5,7 +5,7 @@ angular.module('conexs')
         if (window.plugins) {
           var data = {}
           data.user = user
-          data.regId = window.localStorage['regid']
+          data.regId = window.localStorage.getItem('regid')
           data.platform = $cordovaDevice.getPlatform().toLowerCase()
           data.uuid = $cordovaDevice.getUUID()
           data.name = `${data.uuid} [${data.platform} - ${$cordovaDevice.getVersion()}]`

@@ -4,7 +4,7 @@
     <description>
     </description>
     <author email="ces1508@gmail.com" />
-    <content original-src="index.html" src="http://192.168.1.53:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <allow-intent href="http://*/*" />
@@ -81,7 +81,6 @@
     <plugin name="phonegap-plugin-push" spec="git+https://github.com/phonegap/phonegap-plugin-push.git#1.6.0">
         <variable name="SENDER_ID" value="43898332858" />
     </plugin>
-    <allow-navigation href="http://192.168.1.53:8100" sessionid="e8144014" />
     <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="^4.4.0" />
 </widget>
