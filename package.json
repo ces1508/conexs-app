@@ -3,7 +3,7 @@
   "version": "1.1.2",
   "description": "conexs: An Ionic project",
   "dependencies": {
-    "cordova-android": "^6.2.3",
+    "cordova-android": "7.1.1",
     "cordova-ios": "^4.4.0",
     "cordova-plugin-console": "^1.1.0",
     "cordova-plugin-device": "~1.1.2",
@@ -43,15 +43,16 @@
     "cordova-plugin-console@1.1.0",
     "cordova-plugin-splashscreen@4.1.0",
     "ionic-plugin-keyboard@2.2.1",
-    "cordova-plugin-statusbar@2.3.0"
+    "cordova-plugin-statusbar@2.3.0",
+    "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": [
     "android"
   ],
   "cordova": {
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ],
     "plugins": {
       "cordova-plugin-device": {},
@@ -62,7 +63,8 @@
       },
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-console": {},
-      "cordova-plugin-statusbar": {}
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-inappbrowser": {}
     }
   }
 }

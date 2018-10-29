@@ -12,11 +12,11 @@ angular.module('conexs')
   }).catch(function(error){
 
   })
-  function load(aseguradora){
+  function load(aseguradora) {
     switch (aseguradora) {
-      case 'AIG SEGUROS COLOMBIA S.A':
-        $scope.data.phone = '#360';
-        break;
+      case 'AIG SEGUROS COLOMBIA S.A' :
+        $scope.data.phone = '#360'
+        break
         case 'AIG SEGUROS COLOMBIA S.A.':
         $scope.data.phone = '#360';
         break;

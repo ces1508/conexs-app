@@ -34,6 +34,7 @@ angular.module('conexs')
       })
 
       push.on('notification', function (data) {
+        console.log('data', data)
         if (data.additionalData.foreground) {
           $('.button_2').append('<span class="notification" id="noti"></span>')
         } else {

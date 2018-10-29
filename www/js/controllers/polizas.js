@@ -2,8 +2,8 @@ angular.module('conexs')
   .controller('PolizasCtrl', ['$scope', '$state', '$http', 'pushNotifications', function ($scope, $state, $http, pushNotifications) {
     $scope.showOnlyWthiSiniestros = false
     $scope.init = function () {
-      if (window.localStorage['user']) {
-        pushNotifications.sendDeviceInfo(window.localStorage['user'])
+      if (window.localStorage.getItem('user')) {
+        pushNotifications.sendDeviceInfo(window.localStorage.getItem('user'))
         $scope.list = {}
         var params = {}
         if ($scope.showOnlyWthiSiniestros) {
@@ -15,7 +15,7 @@ angular.module('conexs')
           url: 'http://api.conexseguros.com/list-polizas.php',
           method: 'POST',
           data: {
-            user: window.localStorage['user']
+            user: window.localStorage.getItem('user')
           },
           params
         }

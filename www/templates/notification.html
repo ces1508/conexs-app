@@ -14,9 +14,9 @@
 	<div class="notification-body">
 		<p ng-bind-html="notification.body"></p>
 		<div ng-if="notification.url != '' && notification.link_nombre != ''">
-			 <a href="{{notification.url}}">
-				{{notification.link_nombre}}</a>
-				<!-- <a href="#" ng-click='goLink({{notification.url}})'>{{notification.link_nombre}}</a> -->
+			 <!-- <a href="{{notification.url}}">
+				{{notification.link_nombre}}</a> -->
+				<p  class="external-link" ng-click='goLink(notification.url)'>{{notification.link_nombre}}</p>
 		</div>
 	</div>
 
