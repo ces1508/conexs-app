@@ -8,6 +8,7 @@ angular.module('conexs').config(function ($stateProvider, $urlRouterProvider) {
     })
     .state('polizas', {
       url: '/polizas',
+      cache: false,
       templateUrl: 'templates/listView.html',
       controller: 'PolizasCtrl'
     })
@@ -20,7 +21,8 @@ angular.module('conexs').config(function ($stateProvider, $urlRouterProvider) {
     .state('PDetalle', {
       url:'/detalle/:poliza_id',
       templateUrl:'templates/detalle.html',
-      controller:'DetalleCtrl'
+      controller:'DetalleCtrl',
+      cache: false
     })
     .state('listSiniestros', {
       url:'/polizas/:poliza_id/siniestros',
@@ -49,7 +51,8 @@ angular.module('conexs').config(function ($stateProvider, $urlRouterProvider) {
     .state('notification', {
       url:'/notification/:notification_id',
       templateUrl: 'templates/notification.html',
-      controller: 'NotificationCtrl'
+      controller: 'NotificationCtrl',
+      cache: false
     })
   $urlRouterProvider.otherwise('/login');
 })
